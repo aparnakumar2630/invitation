@@ -1,15 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <h1> Coming Soon...</h1>
-  )
+    <div className="h-screen bg-purple-200 flex items-center justify-center">
+      <h1 className="text-5xl font-bold text-purple-900">
+      Jeeva ❤️ Aparna
+      </h1>
+    </div>
+  );
 }
 
-export default App
+export default App;
