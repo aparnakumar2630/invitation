@@ -1,0 +1,396 @@
+/* ==========================================================
+   Google Fonts
+========================================================== */
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Cormorant+Garamond:wght@300;400;500;600&family=Cormorant+Unicase:wght@500;700&display=swap');
+*/
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#000;
+
+    font-family:'Cormorant Garamond',serif;
+}
+
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+.home{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+}
+
+
+/* ==========================================================
+   VIDEO
+========================================================== */
+
+.bg-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:1;
+}
+
+@media(min-width:992px){
+
+.bg-video{
+
+    object-fit:contain;
+
+    background:black;
+
+}
+
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.08),
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.28)
+    );
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.hero-content{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:5;
+}
+
+.premium-btn{
+
+    padding:18px 55px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    background:rgba(90,30,42,.85);
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.premium-btn:hover{
+
+    transform:scale(1.08);
+
+    background:#6B2737;
+}
+
+
+/* ==========================================================
+   INVITATION
+========================================================== */
+
+.invite-box{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    max-width:850px;
+
+    text-align:center;
+
+    z-index:10;
+
+    animation:fadeUp 2s ease;
+}
+
+
+/* ==========================================================
+   SAVE THE DATE
+========================================================== */
+
+.save-date{
+
+    font-family:'Cormorant Unicase',serif;
+
+    font-size:20px;
+
+    letter-spacing:10px;
+
+    color:#7B4B2A;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+    1px 1px 2px rgba(255,255,255,.25);
+}
+
+
+/* ==========================================================
+   COUPLE NAME
+========================================================== */
+
+.couple-name{
+
+    font-family:'Imperial Script',cursive;
+
+    font-size:120px;
+
+    font-weight:400;
+
+    line-height:1;
+
+    color:#5A1E2A;
+
+    text-shadow:
+    1px 2px 5px rgba(255,255,255,.15);
+}
+
+.and{
+
+    display:block;
+
+    margin:10px 0;
+
+    font-size:40px;
+
+    color:#8C6A2F;
+
+    font-family:'Cormorant Unicase',serif;
+}
+
+
+/* ==========================================================
+   FAMILY
+========================================================== */
+
+.with-family{
+
+    margin-top:18px;
+
+    font-size:28px;
+
+    font-style:italic;
+
+    color:#6B4A3B;
+}
+
+
+/* ==========================================================
+   INVITATION TEXT
+========================================================== */
+
+.invite-text{
+
+    width:80%;
+
+    margin:35px auto;
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    color:#4B3528;
+
+    font-weight:500;
+
+    text-shadow:
+    0 1px 1px rgba(255,255,255,.15);
+}
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.divider{
+
+    font-size:42px;
+
+    margin:25px 0;
+
+    color:#9A7B4F;
+}
+
+
+/* ==========================================================
+   DETAILS
+========================================================== */
+
+.details{
+
+    margin-top:15px;
+}
+
+.details h2{
+
+    font-family:'Cormorant Unicase',serif;
+
+    font-size:42px;
+
+    color:#6B2737;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.details p{
+
+    font-size:24px;
+
+    color:#4E342E;
+
+    margin:8px 0;
+
+    font-weight:600;
+}
+
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translate(-50%,-42%);
+}
+
+to{
+
+    opacity:1;
+
+    transform:translate(-50%,-50%);
+}
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+.save-date{
+
+    font-size:15px;
+
+    letter-spacing:5px;
+}
+
+.couple-name{
+
+    font-size:72px;
+}
+
+.and{
+
+    font-size:28px;
+}
+
+.with-family{
+
+    font-size:20px;
+}
+
+.invite-text{
+
+    width:100%;
+
+    font-size:18px;
+}
+
+.details h2{
+
+    font-size:28px;
+}
+
+.details p{
+
+    font-size:18px;
+}
+
+.premium-btn{
+
+    padding:14px 35px;
+
+    font-size:16px;
+}
+
+}
