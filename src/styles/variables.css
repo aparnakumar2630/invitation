@@ -1,0 +1,34 @@
+:root {
+
+  /* Primary Theme */
+
+  --primary: #6D3DBF;
+  --primary-light: #D9C2FF;
+
+  /* Background */
+
+  --cream: #FFF8F2;
+  --sandal: #F7E8D5;
+
+  /* Accent */
+
+  --gold: #D4AF37;
+
+  /* Text */
+
+  --heading: #43235B;
+  --body: #6E5A7E;
+
+  /* White */
+
+  --white: #ffffff;
+
+  /* Shadow */
+
+  --shadow: 0 15px 40px rgba(0,0,0,.15);
+
+  /* Border Radius */
+
+  --radius: 20px;
+
+}

@@ -1,0 +1,936 @@
+@import url(
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&display=swap"
+);
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.entry-wrapper {
+  width: 100vw;
+
+  height: 100vh;
+  height: 100svh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #130b16;
+
+  perspective: 2200px;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.entry-hero {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  opacity: 0;
+
+  transform: scale(1.06);
+
+  filter:
+    brightness(.7)
+    blur(3px);
+
+  animation:
+    revealHero
+    2.3s
+    cubic-bezier(.16, 1, .3, 1)
+    forwards;
+
+  pointer-events: none;
+}
+
+
+.entry-hero .hero {
+  width: 100%;
+  height: 100%;
+}
+
+
+@keyframes revealHero {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(1.06);
+
+    filter:
+      brightness(.65)
+      blur(3px);
+  }
+
+  25% {
+    opacity: .35;
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+
+    filter:
+      brightness(1)
+      blur(0);
+  }
+}
+
+
+/* =========================================================
+   TEMPLE CAMERA
+========================================================= */
+
+.temple-camera {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+
+  transform-origin:
+    center center;
+
+  transform:
+    translate3d(0, 0, 0)
+    scale(1);
+
+  opacity: 1;
+
+  will-change:
+    transform,
+    opacity;
+
+  transition:
+    transform
+    3s
+    cubic-bezier(.65, 0, .22, 1),
+
+    opacity
+    .55s
+    ease
+    2.35s;
+}
+
+
+/*
+   CAMERA ENTERS THROUGH TEMPLE
+*/
+
+.entry-wrapper.opening
+.temple-camera {
+  transform:
+    translate3d(0, 0, 0)
+    scale(4.3);
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TEMPLE FRAME
+========================================================= */
+
+.temple-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   DOOR CONTAINER
+========================================================= */
+
+.door-container {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    translateZ(25px);
+
+  width:
+    clamp(420px, 42vw, 680px);
+
+  height: 88vh;
+
+  z-index: 20;
+
+  perspective: 2500px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   DOORS
+========================================================= */
+
+.left-door,
+.right-door {
+  position: absolute;
+
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transform-style:
+    preserve-3d;
+
+  backface-visibility:
+    hidden;
+
+  -webkit-backface-visibility:
+    hidden;
+
+  transition:
+    transform
+    1.9s
+    cubic-bezier(.45, 0, .2, 1),
+
+    filter
+    1.8s
+    ease;
+
+  will-change:
+    transform;
+}
+
+
+.left-door {
+  left: 0;
+
+  transform-origin:
+    left center;
+}
+
+
+.right-door {
+  right: 0;
+
+  transform-origin:
+    right center;
+}
+
+
+/* =========================================================
+   DOOR OPENING
+========================================================= */
+
+.entry-wrapper.opening
+.left-door {
+
+  transform:
+    perspective(2500px)
+    rotateY(-105deg);
+
+  filter:
+    brightness(.62)
+    drop-shadow(
+      20px 5px 22px
+      rgba(0, 0, 0, .5)
+    );
+}
+
+
+.entry-wrapper.opening
+.right-door {
+
+  transform:
+    perspective(2500px)
+    rotateY(105deg);
+
+  filter:
+    brightness(.62)
+    drop-shadow(
+      -20px 5px 22px
+      rgba(0, 0, 0, .5)
+    );
+}
+
+
+/* =========================================================
+   FRONT WELCOME
+========================================================= */
+
+.temple-welcome {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    translateZ(80px);
+
+  width:
+    min(380px, 82%);
+
+  z-index: 100;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: #f7e8bf;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 3px 18px
+    rgba(0, 0, 0, .8);
+
+  transition:
+    opacity .45s ease,
+    transform .65s
+    cubic-bezier(.16, 1, .3, 1),
+    filter .45s ease;
+}
+
+
+/* hide content when entering */
+
+.entry-wrapper.opening
+.temple-welcome {
+  opacity: 0;
+
+  filter:
+    blur(5px);
+
+  transform:
+    translate(-50%, -50%)
+    translateZ(80px)
+    scale(.85);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALL HEADING
+========================================================= */
+
+.welcome-small {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3.5px;
+
+  color: #e5c276;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   ORNAMENT
+========================================================= */
+
+.welcome-ornament {
+  font-size: 25px;
+
+  color: #d7ad58;
+
+  margin-bottom: 5px;
+
+  animation:
+    ornamentGlow
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes ornamentGlow {
+
+  0%,
+  100% {
+    opacity: .65;
+
+    filter:
+      drop-shadow(
+        0 0 3px
+        rgba(231, 191, 101, .2)
+      );
+  }
+
+  50% {
+    opacity: 1;
+
+    filter:
+      drop-shadow(
+        0 0 10px
+        rgba(231, 191, 101, .7)
+      );
+  }
+}
+
+
+/* =========================================================
+   NAMES
+========================================================= */
+
+.temple-welcome h1 {
+  margin: 0 0 10px;
+
+  font-family:
+    "Italianno",
+    "Cormorant Garamond",
+    cursive;
+
+  font-size:
+    clamp(45px, 4vw, 66px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+  color: #f8e9c3;
+}
+
+
+.temple-welcome h1 span {
+  display: block;
+
+  margin: 6px 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 23px;
+
+  font-style: italic;
+
+  color: #d9ad56;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.temple-welcome p {
+  margin:
+    8px 0 20px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  letter-spacing: .4px;
+
+  color:
+    rgba(255, 244, 218, .88);
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.temple-enter-btn {
+  position: relative;
+
+  pointer-events: auto;
+
+  min-width: 235px;
+
+  padding:
+    13px 21px;
+
+  border:
+    1px solid
+    rgba(228, 188, 100, .85);
+
+  border-radius: 50px;
+
+  outline: none;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  color: #f8e9c3;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(95, 50, 21, .88),
+      rgba(52, 21, 14, .92)
+    );
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, .38),
+
+    inset
+    0 1px 0
+    rgba(255, 232, 174, .25),
+
+    0 0 0 4px
+    rgba(209, 161, 72, .08);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+
+/* GOLD OUTER LINE */
+
+.temple-enter-btn::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border:
+    1px solid
+    rgba(226, 188, 103, .25);
+
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.enter-btn-shine {
+  position: absolute;
+
+  top: -50%;
+
+  left: -70%;
+
+  width: 50%;
+  height: 200%;
+
+  transform:
+    rotate(20deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 240, 197, .48),
+      transparent
+    );
+
+  animation:
+    buttonShine
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes buttonShine {
+
+  0%,
+  65% {
+    left: -70%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+
+/* =========================================================
+   BUTTON CONTENT
+========================================================= */
+
+.enter-btn-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+}
+
+
+.enter-icon {
+  color: #d9ad56;
+
+  font-size: 16px;
+}
+
+
+.enter-text {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: .8px;
+}
+
+
+.enter-arrow {
+  color: #e0b761;
+
+  font-size: 18px;
+
+  transition:
+    transform .3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.temple-enter-btn:hover {
+  transform:
+    translateY(-3px)
+    scale(1.025);
+
+  border-color:
+    #f0cf83;
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, .45),
+
+    0 0 25px
+    rgba(216, 169, 78, .18),
+
+    inset
+    0 1px 0
+    rgba(255, 237, 190, .3);
+}
+
+
+.temple-enter-btn:hover
+.enter-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM WORD
+========================================================= */
+
+.welcome-bottom {
+  margin-top: 14px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color:
+    rgba(224, 186, 100, .7);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(min-width: 751px)
+and
+(max-width: 1100px) {
+
+  .door-container {
+    width: 65vw;
+    height: 85vh;
+  }
+
+
+  .entry-wrapper.opening
+  .temple-camera {
+    transform:
+      scale(3.4);
+  }
+
+}
+
+
+/* =========================================================
+   NORMAL DESKTOP
+========================================================= */
+
+@media
+(min-width: 1101px)
+and
+(max-width: 1600px) {
+
+  .door-container {
+    width: 45vw;
+    height: 88vh;
+  }
+
+
+  .entry-wrapper.opening
+  .temple-camera {
+    transform:
+      scale(4);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media
+(min-width: 1601px) {
+
+  .door-container {
+    width: 38vw;
+    height: 90vh;
+  }
+
+
+  .entry-wrapper.opening
+  .temple-camera {
+    transform:
+      scale(4.5);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 750px) {
+
+  .entry-wrapper {
+    height: 100svh;
+  }
+
+
+  /*
+     Hide desktop temple frame
+  */
+
+  .temple-frame {
+    display: none;
+  }
+
+
+  .door-container {
+    inset: 0;
+
+    top: 0;
+    left: 0;
+
+    transform: none;
+
+    width: 100vw;
+    height: 100svh;
+
+    perspective: 1800px;
+  }
+
+
+  .left-door,
+  .right-door {
+    width: 50vw;
+
+    height: 100svh;
+
+    object-fit: fill;
+  }
+
+
+  .temple-welcome {
+    width: 80vw;
+  }
+
+
+  .temple-welcome h1 {
+    font-size: 52px;
+  }
+
+
+  .temple-welcome p {
+    font-size: 13px;
+  }
+
+
+  .temple-enter-btn {
+    min-width: 215px;
+
+    padding:
+      12px 18px;
+  }
+
+
+  .entry-wrapper.opening
+  .left-door {
+
+    transform:
+      perspective(1800px)
+      rotateY(-105deg);
+  }
+
+
+  .entry-wrapper.opening
+  .right-door {
+
+    transform:
+      perspective(1800px)
+      rotateY(105deg);
+  }
+
+
+  .entry-wrapper.opening
+  .temple-camera {
+
+    transform:
+      scale(2.3);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width: 480px) {
+
+  .temple-welcome {
+    width: 86vw;
+  }
+
+
+  .welcome-small {
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .temple-welcome h1 {
+    font-size: 46px;
+  }
+
+
+  .temple-welcome p {
+    font-size: 12px;
+  }
+
+
+  .temple-enter-btn {
+    min-width: 205px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  .temple-camera,
+  .entry-hero,
+  .left-door,
+  .right-door,
+  .temple-welcome,
+  .temple-enter-btn {
+
+    transition-duration:
+      .01ms !important;
+
+    animation-duration:
+      .01ms !important;
+
+  }
+
+}

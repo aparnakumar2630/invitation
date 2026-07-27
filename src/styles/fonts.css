@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap');
+
+body{
+    font-family:"Poppins",sans-serif;
+}
+
+.heading{
+    font-family:"Cinzel",serif;
+}
+
+.tamil{
+    font-family:"Noto Serif Tamil",serif;
+}
