@@ -5,8 +5,7 @@ import handVideo from "../../assets/hero/home/handjoining.webm";
 import heroBg from "../../assets/hero/home/bannerbg.png";
 import AJImg from "../../assets/hero/home/JA3.png";
 
-import handFlowerLeft from "../../assets/hero/home/hanging-flower-left.png";
-import handFlowerRight from "../../assets/hero/home/hanging-flower-left.png";
+import lotus from '../../assets/hero/home/lotus3.png'
 
 export default function Hero() {
 
@@ -70,24 +69,22 @@ useEffect(() => {
      VIEW WEDDING DAY
   ===================================================== */
 
-  const handleViewWeddingDay = () => {
+const handleViewWeddingDay = () => {
+  const weddingSection =
+    document.getElementById("wedding-details");
 
-    const nextSection =
-      document.getElementById("wedding-details");
+  console.log("Wedding section:", weddingSection);
 
-    if (nextSection) {
+  if (!weddingSection) return;
 
-      nextSection.scrollIntoView({
-        behavior: "smooth"
-      });
-
-    }
-
-  };
-
+  weddingSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
   return (
-
+<>
     <section className="hero">
 
 
@@ -213,7 +210,8 @@ useEffect(() => {
           {/* LEFT ORNAMENT */}
 
           <div className="footer-ornament">
-            ❦
+                        <img src={lotus} className="lotus-img"/>
+
           </div>
 
 
@@ -242,21 +240,14 @@ useEffect(() => {
 
           {/* BUTTON */}
 
-          <button
-            type="button"
-            className="wedding-day-btn"
-            onClick={handleViewWeddingDay}
-          >
-
-            <span>
-              View Our Wedding Day
-            </span>
-
-            <strong>
-              →
-            </strong>
-
-          </button>
+       <button
+  type="button"
+  className="wedding-day-btn"
+  onClick={handleViewWeddingDay}
+>
+  <span>View Our Wedding Day</span>
+  <strong>→</strong>
+</button>
 
 
           {/* BLESSING */}
@@ -284,7 +275,7 @@ useEffect(() => {
           {/* RIGHT ORNAMENT */}
 
           <div className="footer-ornament">
-            ❦
+            <img src={lotus} className="lotus-img"/>
           </div>
 
 
@@ -315,6 +306,7 @@ useEffect(() => {
 
     </section>
 
+</>
   );
 
 }

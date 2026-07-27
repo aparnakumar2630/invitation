@@ -6,6 +6,7 @@ import leftDoor from "../../assets/hero/door/right-door.png";
 import rightDoor from "../../assets/hero/door/left-door.png";
 
 import Hero from "../Hero/Hero";
+import WeddingCountdown from "../Countdown/WeddingCountdown";
 
 export default function TempleEntry() {
   const [open, setOpen] = useState(false);
@@ -13,95 +14,100 @@ export default function TempleEntry() {
   const handleOpen = () => {
     if (open) return;
 
-    // IMPORTANT:
-    // Hero gets mounted only now.
-    // Therefore hand video starts only after click.
     setOpen(true);
   };
 
   return (
-    <div className={`entry-wrapper ${open ? "opening" : ""}`}>
-
+    <>
       {/* ==========================================
-          HERO
-          Mount ONLY after button click
+          SCREEN 1
+          KEEP YOUR OLD ANIMATION EXACTLY
       ========================================== */}
 
-      {open && (
-        <div className="entry-hero">
-          <Hero />
-        </div>
-      )}
+      <div className={`entry-wrapper ${open ? "opening" : ""}`}>
+
+        {/* HERO IS BEHIND THE TEMPLE
+
+            IMPORTANT:
+            Keep this here.
+
+            This is what gives:
+            door open -> zoom -> Hero reveal
+        */}
+
+        {open && (
+          <div className="entry-hero">
+            <Hero />
+          </div>
+        )}
 
 
-      {/* ==========================================
-          TEMPLE ENTRANCE
-      ========================================== */}
+        {/* ==========================================
+            TEMPLE + DOORS
+        ========================================== */}
 
-      <div className="temple-camera">
-
-        <img
-          src={templeFrame}
-          className="temple-frame"
-          alt="Temple entrance"
-        />
-
-
-        {/* ========================================
-            DOORS
-        ======================================== */}
-
-        <div className="door-container">
+        <div className="temple-camera">
 
           <img
-            src={leftDoor}
-            className="left-door"
-            alt=""
-          />
-
-          <img
-            src={rightDoor}
-            className="right-door"
-            alt=""
+            src={templeFrame}
+            className="temple-frame"
+            alt="Temple entrance"
           />
 
 
-          {/* ======================================
-              FRONT WELCOME CONTENT
-          ====================================== */}
+          <div className="door-container">
 
-          <div className="temple-welcome">
+            <img
+              src={leftDoor}
+              className="left-door"
+              alt=""
+            />
 
-            {/* ENTER BUTTON */}
+            <img
+              src={rightDoor}
+              className="right-door"
+              alt=""
+            />
 
-            <button
-              type="button"
-              className="temple-enter-btn"
-              onClick={handleOpen}
-            >
-              <span className="enter-btn-shine" />
 
-              <span className="enter-btn-content">
+            {/* ======================================
+                ENTER BUTTON
+            ====================================== */}
 
-                <span className="enter-icon">
-                  ❧
+            <div className="temple-welcome">
+
+              <button
+                type="button"
+                className="temple-enter-btn"
+                onClick={handleOpen}
+              >
+
+                <span className="enter-btn-shine" />
+
+                <span className="enter-btn-content">
+
+                  <span className="enter-icon">
+                    ❧
+                  </span>
+
+                  <span className="enter-text">
+                    Enter Our Celebration
+                  </span>
+
+                  <span className="enter-arrow">
+                    →
+                  </span>
+
                 </span>
 
-                <span className="enter-text">
-                  Enter Our Celebration
-                </span>
+              </button>
 
-                <span className="enter-arrow">
-                  →
-                </span>
 
+              <span className="welcome-bottom">
+                BEGIN THE JOURNEY
               </span>
-            </button>
 
-
-            <span className="welcome-bottom">
-              BEGIN THE JOURNEY
-            </span>
+            </div>
 
           </div>
 
@@ -109,6 +115,18 @@ export default function TempleEntry() {
 
       </div>
 
-    </div>
+
+      {/* ==========================================
+          SECTION 2
+
+          IMPORTANT:
+          OUTSIDE entry-wrapper
+      ========================================== */}
+
+      {open && (
+        <WeddingCountdown />
+      )}
+
+    </>
   );
 }

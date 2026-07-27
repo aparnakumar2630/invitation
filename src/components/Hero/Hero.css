@@ -737,7 +737,7 @@
     cursive;
 
   font-size:
-    clamp(68px, 6.2vw, 108px);
+    clamp(100px, 6.2vw, 108px);
 
   font-weight: 400;
 
@@ -839,7 +839,7 @@
     cursive;
 
   font-size:
-    clamp(72px, 6.6vw, 116px);
+    clamp(100px, 6.6vw, 116px);
 
   font-weight: 400;
 
@@ -1607,7 +1607,7 @@ and
   .groom-name {
 
     font-size:
-      clamp(58px, 5vw, 78px);
+      clamp(100px, 5vw, 78px);
 
   }
 
@@ -1615,7 +1615,7 @@ and
   .bride-name {
 
     font-size:
-      clamp(62px, 5.2vw, 84px);
+      clamp(100px, 5.2vw, 84px);
 
   }
 
@@ -1648,8 +1648,9 @@ and
 
   .hero-hands {
 
-        width: 102vw !important;
+        width: 100vw !important;
         height: 120vh !important;
+        top:26%
   }
 
 
@@ -1679,6 +1680,26 @@ and
 
   }
 
+  .groom-name{
+    font-size: 70px;
+  }
+  .bride-name{
+    font-size: 70px;
+  }
+
+  .hero-names{
+    margin-top: 90px;
+  }
+
+  .hero-tagline{
+    bottom:195px
+  }
+  .hero-footer {
+bottom:60px
+  }
+  .footer-eyebrow{
+    display: none;
+  }
 }
 
 
@@ -1782,7 +1803,7 @@ and
 
   .hero-names {
 
-    margin-top: 145px;
+    margin-top: 100px;
 
   }
 
@@ -1790,7 +1811,7 @@ and
   .groom-name {
 
     font-size:
-      clamp(54px, 15vw, 72px);
+      clamp(75px, 15vw, 72px);
 
   }
 
@@ -1798,7 +1819,7 @@ and
   .bride-name {
 
     font-size:
-      clamp(58px, 16vw, 78px);
+      clamp(75px, 16vw, 78px);
 
   }
 
@@ -1861,10 +1882,10 @@ and
 
   .hero-footer {
 
-    bottom: 10px;
+    bottom: 86px;
 
     width:
-      calc(100vw - 20px);
+      calc(95vw - 20px);
 
   }
 
@@ -2028,7 +2049,7 @@ and
 
   .hero-tagline {
 
-    bottom: 225px;
+    bottom: 273px;
 
   }
 
@@ -2057,4 +2078,9 @@ and
 
   }
 
+}
+
+.lotus-img{
+  height: 80px;
+  width: 80px;
 }

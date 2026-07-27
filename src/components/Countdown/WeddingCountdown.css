@@ -1,0 +1,2230 @@
+/* =========================================================
+   WEDDING COUNTDOWN
+   Lavender + Ivory + Antique Gold
+========================================================= */
+
+.wedding-countdown-section {
+  --wc-purple: #563064;
+  --wc-purple-dark: #3f204d;
+  --wc-purple-soft: #75527d;
+
+  --wc-gold: #b1843e;
+  --wc-gold-light: #d8b66e;
+  --wc-gold-soft: #ead7aa;
+
+  --wc-ivory: #fffaf7;
+  --wc-card: rgba(255, 252, 250, 0.92);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  color: var(--wc-purple);
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(255, 255, 255, 0.95),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #f9eff8 0%,
+      #f8f1fa 45%,
+      #eee0f4 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND PATTERN
+========================================================= */
+
+.wedding-countdown-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.32;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(102, 65, 113, 0.11) 1px,
+      transparent 1px
+    );
+
+  background-size: 18px 18px;
+}
+
+
+/* =========================================================
+   CENTER LIGHT
+========================================================= */
+
+.wedding-countdown-section::after {
+  content: "";
+
+  position: absolute;
+
+  top: -160px;
+  left: 50%;
+
+  width: 850px;
+  height: 600px;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.25) 55%,
+      transparent 75%
+    );
+}
+
+
+/* =========================================================
+   FOUR CORNER FLOWER IMAGES
+========================================================= */
+
+.countdown-corner-flower {
+  position: absolute;
+
+  width: clamp(150px, 15vw, 250px);
+
+  z-index: 3;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0.9;
+
+  animation:
+    countdownFlowerFloat
+    5s ease-in-out
+    infinite;
+}
+
+
+.countdown-corner-flower img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 8px 15px
+      rgba(79, 45, 89, 0.08)
+    );
+}
+
+
+/* TOP LEFT */
+
+.flower-top-left {
+  top: -11px;
+  left: -15px;
+  z-index: 30;
+}
+
+/* TOP RIGHT */
+
+.flower-top-right {
+  top: -11px;
+  right: -15px;
+
+  animation-delay: -1.2s;
+}
+
+.flower-top-right img {
+  transform:
+    scaleX(-1)
+}
+
+
+/* BOTTOM LEFT */
+
+.flower-bottom-left {
+  bottom: 5px;
+  left: -15px;
+
+  animation-delay: -2.2s;
+  z-index: 40;
+}
+
+.flower-bottom-left img {
+  transform:
+    scaleY(-1)
+}
+
+
+/* BOTTOM RIGHT */
+
+.flower-bottom-right {
+  bottom: 5px;
+  right: -15px;
+
+  animation-delay: -3.2s;
+  z-index: 40;
+}
+
+.flower-bottom-right img {
+  transform:
+    scale(-1)
+    rotate(0deg);
+}
+
+
+/* FLOWER ANIMATION */
+
+@keyframes countdownFlowerFloat {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 7px;
+  }
+
+}
+
+
+/* =========================================================
+   MAIN COUNTDOWN AREA
+========================================================= */
+
+.wedding-countdown-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(760px, 92%);
+
+  margin: 0 auto;
+
+  padding:
+    30px
+    0
+    42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+========================================================= */
+
+.countdown-top-ornament {
+  width: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* gap: 12px; */
+
+  margin-bottom: 40px;
+
+  color: var(--wc-gold);
+}
+
+
+.countdown-top-ornament span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.countdown-top-ornament span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.countdown-top-ornament strong {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.countdown-eyebrow {
+  margin:
+    0
+    0
+    7px;
+
+  color: var(--wc-gold);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+
+.countdown-title {
+  margin: 0;
+
+  color: var(--wc-purple);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      40px,
+      4vw,
+      58px
+    );
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: -1.5px;
+}
+
+
+.countdown-subtitle {
+  margin:
+    9px
+    0
+    24px;
+
+  color: var(--wc-purple-soft);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   PREMIUM ROYAL SCRATCH CARD
+========================================================= */
+
+.wedding-scratch-card {
+  position: relative;
+
+  width: min(560px, 100%);
+  height: 178px;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #ffffff 0%,
+      #fffaf7 55%,
+      #f8edf7 100%
+    );
+
+  border:
+    1px solid
+    rgba(177, 132, 62, 0.82);
+
+  outline:
+    1px solid
+    rgba(216, 182, 112, 0.38);
+
+  outline-offset: 3px;
+
+  box-shadow:
+    0 17px 42px
+      rgba(74, 42, 82, 0.10),
+
+    0 5px 12px
+      rgba(121, 82, 32, 0.08),
+
+    inset 0 0 0 4px
+      rgba(255, 247, 225, 0.40);
+
+  isolation: isolate;
+
+  transition:
+    transform 0.55s
+      cubic-bezier(.16, 1, .3, 1),
+
+    box-shadow 0.55s ease;
+}
+
+
+.wedding-scratch-card:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 22px 50px
+      rgba(74, 42, 82, 0.13),
+
+    0 7px 16px
+      rgba(121, 82, 32, 0.10),
+
+    inset 0 0 0 4px
+      rgba(255, 247, 225, 0.48);
+}
+
+
+/* INNER ANTIQUE BORDER */
+
+.wedding-scratch-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  border:
+    1px solid
+    rgba(111, 72, 26, 0.52);
+
+  border-radius: 2px;
+
+  box-shadow:
+    inset 0 0 0 2px
+      rgba(255, 229, 167, 0.28);
+}
+
+
+/* SECOND INNER BORDER */
+
+.wedding-scratch-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 13px;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  border:
+    1px solid
+    rgba(126, 83, 29, 0.23);
+
+  border-radius: 1px;
+}
+
+
+/* =========================================================
+   SCRATCH REVEAL ANIMATION
+========================================================= */
+
+.scratch-card-revealed {
+  animation:
+    revealedCard
+    0.9s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+@keyframes revealedCard {
+
+  0% {
+    opacity: 0.75;
+
+    transform:
+      scale(0.98);
+  }
+
+  55% {
+    transform:
+      scale(1.018);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   DATE UNDER SCRATCH
+========================================================= */
+
+.scratch-date-content {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #fffaf7 55%,
+      #f9edf7 100%
+    );
+}
+
+
+.scratch-date-eyebrow {
+  margin-bottom: 9px;
+
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3.5px;
+}
+
+
+.scratch-date-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+
+.scratch-date-main > strong {
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+.scratch-date-divider {
+  width: 1px;
+  height: 52px;
+
+  background:
+    linear-gradient(
+      transparent,
+      var(--wc-gold),
+      transparent
+    );
+}
+
+
+.scratch-month-year {
+  min-width: 125px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+}
+
+
+.scratch-month-year span {
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  letter-spacing: 3px;
+}
+
+
+.scratch-month-year small {
+  margin-top: 8px;
+
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 5px;
+}
+
+
+.scratch-date-bottom {
+  width: 150px;
+
+  margin-top: 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--wc-gold);
+}
+
+
+.scratch-date-bottom span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.scratch-date-bottom span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.scratch-date-bottom strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SCRATCH CANVAS
+========================================================= */
+
+.scratch-canvas {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  cursor: grab;
+
+  touch-action: none;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+}
+
+
+.scratch-canvas:active {
+  cursor: grabbing;
+}
+
+
+/* =========================================================
+   SCRATCH INSTRUCTION
+========================================================= */
+
+.scratch-instruction,
+.scratch-revealed-message {
+  min-height: 30px;
+
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: var(--wc-purple-soft);
+}
+
+
+.scratch-instruction p,
+.scratch-revealed-message p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  font-style: italic;
+}
+
+
+.scratch-hand {
+  display: inline-block;
+
+  font-size: 15px;
+
+  animation:
+    scratchHandMove
+    1.8s ease-in-out
+    infinite;
+}
+
+
+@keyframes scratchHandMove {
+
+  0%,
+  100% {
+    transform:
+      translateX(-3px);
+  }
+
+  50% {
+    transform:
+      translateX(5px);
+  }
+
+}
+
+
+.scratch-revealed-message {
+  color: var(--wc-gold);
+
+  animation:
+    revealMessage
+    0.7s ease
+    both;
+}
+
+
+@keyframes revealMessage {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   CONTENT AFTER SCRATCH
+========================================================= */
+
+.countdown-after-reveal {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation:
+    countdownReveal
+    0.85s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+@keyframes countdownReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   COUNTDOWN WRAPPER
+========================================================= */
+
+.countdown-wrapper {
+  width: 100%;
+
+  margin-top: 5px;
+}
+
+
+.countdown-label {
+  width: min(470px, 90%);
+
+  margin:
+    0 auto
+    10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.countdown-label span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(177, 132, 62, 0.65)
+    );
+}
+
+
+.countdown-label span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      rgba(177, 132, 62, 0.65)
+    );
+}
+
+
+.countdown-label p {
+  margin: 0;
+
+  white-space: nowrap;
+
+  color: var(--wc-purple-soft);
+
+  font-family: Georgia, serif;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   COUNTDOWN GRID
+========================================================= */
+
+.countdown-grid {
+  width: min(650px, 100%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    18px
+    1fr
+    18px
+    1fr
+    18px
+    1fr;
+
+  align-items: center;
+}
+
+
+.countdown-box {
+  min-height: 88px;
+
+  padding:
+    12px
+    8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(177, 132, 62, 0.38);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 252, 250, 0.82);
+
+  box-shadow:
+    0 8px 24px
+    rgba(78, 45, 88, 0.05);
+
+  backdrop-filter:
+    blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.countdown-box:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(78, 45, 88, 0.09);
+}
+
+
+.countdown-box strong {
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 34px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+.countdown-box span {
+  margin-top: 7px;
+
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+}
+
+
+.countdown-separator {
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   COUNTDOWN BOTTOM
+========================================================= */
+
+.countdown-bottom {
+  width: min(500px, 90%);
+
+  margin-top: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+.countdown-bottom span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(177, 132, 62, 0.6)
+    );
+}
+
+
+.countdown-bottom span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      rgba(177, 132, 62, 0.6)
+    );
+}
+
+
+.countdown-bottom p {
+  margin: 0;
+
+  white-space: nowrap;
+
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   EVENTS REVEAL SECTION
+========================================================= */
+
+.wedding-events-reveal {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  border-top:
+    1px solid
+    rgba(177, 132, 62, 0.18);
+
+  background:url('../../assets/hero/home/countdownbg1.png');
+
+  animation:
+    eventsReveal
+    1.1s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+@keyframes eventsReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   EVENTS CONTAINER
+========================================================= */
+
+.events-container {
+  width: min(1000px, 92%);
+
+  margin: auto;
+
+  padding:
+    36px
+    0
+    40px;
+}
+
+
+/* =========================================================
+   EVENTS HEADING
+========================================================= */
+
+.events-heading {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+
+.events-heading > p {
+  margin:
+    0
+    0
+    7px;
+
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.events-heading h3 {
+  margin: 0;
+
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size:
+    clamp(
+      29px,
+      3vw,
+      40px
+    );
+
+  line-height: 1.1;
+
+  font-weight: 400;
+}
+
+
+.events-heading-line {
+  width: 150px;
+
+  margin:
+    10px auto
+    0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--wc-gold);
+}
+
+
+.events-heading-line span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    var(--wc-gold-light);
+}
+
+
+.events-heading-line strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   EVENT GRID
+========================================================= */
+
+.events-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    85px
+    minmax(0, 1fr);
+
+  align-items: stretch;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.wedding-event-card {
+  position: relative;
+
+  min-height: 350px;
+
+  padding:
+    46px
+    34px
+    25px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(177, 132, 62, 0.55);
+
+  border-radius:
+    20px
+    20px
+    18px
+    18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 250, 0.96),
+      rgba(255, 248, 247, 0.90)
+    );
+
+  box-shadow:
+    0 16px 40px
+    rgba(73, 42, 81, 0.08);
+
+  transition:
+    transform 0.4s
+      cubic-bezier(.16, 1, .3, 1),
+
+    box-shadow 0.4s ease;
+}
+
+
+.wedding-event-card:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 22px 50px
+    rgba(73, 42, 81, 0.13);
+}
+
+
+/* =========================================================
+   EVENT ICON
+========================================================= */
+
+.event-icon {
+  position: absolute;
+
+  top: -25px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    var(--wc-gold-light);
+
+  border-radius: 50%;
+
+  color: var(--wc-gold);
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaf6,
+      #e7c5f4
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(75, 42, 83, 0.12);
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+}
+
+
+.event-icon svg {
+  display: block;
+
+  width: 30px;
+  height: 30px;
+
+  color: var(--wc-gold);
+
+  stroke: currentColor;
+}
+
+
+/* =========================================================
+   EVENT TYPE
+========================================================= */
+
+.event-type {
+  margin:
+    0
+    0
+    9px;
+
+  color: var(--wc-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2.3px;
+}
+
+
+.wedding-event-card h4 {
+  margin: 0;
+
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   EVENT SMALL LINE
+========================================================= */
+
+.event-small-line {
+  width: 130px;
+
+  margin:
+    10px auto
+    13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--wc-gold);
+}
+
+
+.event-small-line span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(177, 132, 62, 0.5);
+}
+
+
+.event-small-line strong {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   EVENT INFO
+========================================================= */
+
+.event-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: var(--wc-gold);
+}
+
+
+.event-info-row p {
+  margin: 0;
+
+  color: #9a7034;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+}
+
+
+.event-info-icon {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   EVENT LOCATION
+========================================================= */
+
+.event-location {
+  min-height: 62px;
+}
+
+
+.location-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+}
+
+
+.location-title span {
+  color: var(--wc-gold);
+
+  font-size: 10px;
+}
+
+
+.location-title strong {
+  color: var(--wc-purple);
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.event-location > p {
+  margin:
+    4px
+    0
+    0;
+
+  color: var(--wc-purple-soft);
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   EVENT DIVIDER
+========================================================= */
+
+.event-divider {
+  width: 120px;
+  height: 1px;
+
+  margin:
+    13px auto;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(177, 132, 62, 0.65),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   EVENT DESCRIPTION
+========================================================= */
+
+.event-description {
+  min-height: 44px;
+
+  margin:
+    0
+    0
+    15px;
+
+  color: var(--wc-purple-soft);
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+
+  font-style: italic;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   VIEW LOCATION BUTTON
+========================================================= */
+
+.event-location-btn {
+  width: min(235px, 100%);
+  height: 43px;
+
+  margin: auto;
+
+  padding:
+    0
+    17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border:
+    1px solid
+    rgba(91, 48, 103, 0.65);
+
+  border-radius: 30px;
+
+  outline: none;
+
+  color: var(--wc-purple);
+
+  background:
+    rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.event-location-btn:hover {
+  transform:
+    translateY(-2px);
+
+  color: #fff;
+
+  border-color:
+    var(--wc-purple);
+
+  background:
+    var(--wc-purple);
+
+  box-shadow:
+    0 9px 22px
+    rgba(80, 43, 91, 0.18);
+}
+
+
+.event-location-btn strong {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+
+.map-icon {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   CENTER ORNAMENT
+========================================================= */
+
+.events-center-ornament {
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--wc-gold);
+}
+
+
+.center-line-top,
+.center-line-bottom {
+  width: 1px;
+
+  flex: 1;
+
+  min-height: 70px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(177, 132, 62, 0.75)
+    );
+}
+
+
+.center-line-bottom {
+  background:
+    linear-gradient(
+      rgba(177, 132, 62, 0.75),
+      transparent
+    );
+}
+
+
+.center-decoration {
+  padding:
+    12px
+    0;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+}
+
+
+.events-center-ornament > strong {
+  margin-top: 7px;
+
+  font-size: 12px;
+
+  color: var(--wc-gold);
+}
+
+
+/* =========================================================
+   EVENTS FOOTER
+========================================================= */
+
+.events-footer {
+  width: min(500px, 90%);
+
+  margin:
+    20px auto
+    0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--wc-purple);
+}
+
+
+.events-footer span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.events-footer span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      var(--wc-gold-light)
+    );
+}
+
+
+.events-footer p {
+  margin: 0;
+
+  white-space: nowrap;
+
+  font-family: Georgia, serif;
+
+  font-size: 15px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .countdown-corner-flower {
+    width: 155px;
+
+    opacity: 0.82;
+  }
+
+
+  .flower-top-left {
+    top: -18px;
+    left: -35px;
+  }
+
+
+  .flower-top-right {
+    top: -18px;
+    right: -35px;
+  }
+
+
+  .flower-bottom-left {
+    bottom: 15px;
+    left: -35px;
+  }
+
+
+  .flower-bottom-right {
+    bottom: 15px;
+    right: -35px;
+  }
+
+
+  .wedding-countdown-container {
+    padding-top: 10px;
+  }
+
+
+  .events-container {
+    width: min(720px, 90%);
+  }
+
+
+  .events-grid {
+    grid-template-columns:
+      1fr
+      45px
+      1fr;
+
+    gap: 13px;
+  }
+
+
+  .wedding-event-card {
+    padding:
+      44px
+      20px
+      23px;
+  }
+
+
+  .wedding-event-card h4 {
+    font-size: 21px;
+  }
+
+
+  .events-center-ornament {
+    min-height: 320px;
+  }
+
+  .wedding-events-reveal{
+background: url('/src/assets/hero/home/countdownbg3.png');
+background-position: bottom;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* FLOWERS */
+
+  .countdown-corner-flower {
+    width: 105px;
+
+    opacity: 0.72;
+  }
+
+
+  .flower-top-left {
+    top: -8px;
+    left: -27px;
+  }
+
+
+  .flower-top-right {
+    top: -8px;
+    right: -27px;
+  }
+
+
+  .flower-bottom-left {
+    bottom: -15px;
+    left: -27px;
+  }
+
+
+  .flower-bottom-right {
+    bottom: -15px;
+    right: -27px;
+  }
+
+
+  /* MAIN */
+
+  .wedding-countdown-container {
+    width: 90%;
+
+    padding:
+      32px
+      0;
+  }
+
+
+  .countdown-title {
+    font-size: 38px;
+  }
+
+
+  .countdown-subtitle {
+    margin-bottom: 20px;
+
+    font-size: 13px;
+  }
+
+
+  /* SCRATCH */
+
+  .wedding-scratch-card {
+    height: 150px;
+
+    border-radius: 4px;
+
+    outline-offset: 2px;
+  }
+
+
+  .wedding-scratch-card::before {
+    inset: 7px;
+  }
+
+
+  .wedding-scratch-card::after {
+    inset: 11px;
+  }
+
+
+  .scratch-date-main > strong {
+    font-size: 41px;
+  }
+
+
+  .scratch-date-divider {
+    height: 45px;
+  }
+
+
+  .scratch-month-year span {
+    font-size: 14px;
+  }
+
+
+  /* TIMER */
+
+  .countdown-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    gap: 7px;
+  }
+
+
+  .countdown-separator {
+    display: none;
+  }
+
+
+  .countdown-box {
+    min-height: 75px;
+
+    padding:
+      10px
+      3px;
+  }
+
+
+  .countdown-box strong {
+    font-size: 27px;
+  }
+
+
+  .countdown-box span {
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* EVENTS */
+
+  .events-container {
+    width: 88%;
+
+    padding:
+      32px
+      0
+      35px;
+  }
+
+
+  .events-heading {
+    margin-bottom: 42px;
+  }
+
+
+  .events-heading h3 {
+    font-size: 30px;
+  }
+
+
+  .events-grid {
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+  }
+
+
+  .events-center-ornament {
+    display: none;
+  }
+
+
+  .wedding-event-card {
+    width: 100%;
+
+    min-height: auto;
+
+    padding:
+      43px
+      22px
+      24px;
+
+    box-sizing: border-box;
+  }
+
+
+  .event-description {
+    min-height: auto;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  /* FLOWERS */
+
+  .countdown-corner-flower {
+    width: 82px;
+
+    opacity: 0.67;
+  }
+
+
+  /* .flower-top-left {
+    top: -6px;
+    left: -4px;
+  }
+
+
+  .flower-top-right {
+    top: -8px;
+    right: 5px;
+  }
+
+
+  .flower-bottom-left {
+    bottom: -5px;
+    left: -5px;
+  }
+
+
+  .flower-bottom-right {
+    bottom: 5px;
+    right: 5px;
+  } */
+
+
+  /* MAIN */
+
+  .wedding-countdown-container {
+    width: 92%;
+
+    padding-top: 10px;
+  }
+
+
+  .countdown-top-ornament {
+    width: 115px;
+  }
+
+
+  .countdown-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 3.5px;
+  }
+
+
+  .countdown-title {
+    font-size: 33px;
+
+    letter-spacing: -0.7px;
+  }
+
+
+  .countdown-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  /* SCRATCH */
+
+  .wedding-scratch-card {
+    height: 135px;
+
+    border-radius: 3px;
+  }
+
+
+  .wedding-scratch-card::before {
+    inset: 6px;
+  }
+
+
+  .wedding-scratch-card::after {
+    inset: 10px;
+  }
+
+
+  .scratch-date-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .scratch-date-main {
+    gap: 12px;
+  }
+
+
+  .scratch-date-main > strong {
+    font-size: 37px;
+  }
+
+
+  .scratch-date-divider {
+    height: 40px;
+  }
+
+
+  .scratch-month-year {
+    min-width: 105px;
+  }
+
+
+  .scratch-month-year span {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .scratch-month-year small {
+    font-size: 9px;
+  }
+
+
+  .scratch-instruction p,
+  .scratch-revealed-message p {
+    font-size: 11px;
+  }
+
+
+  /* COUNTDOWN */
+
+  .countdown-label {
+    width: 100%;
+
+    gap: 7px;
+  }
+
+
+  .countdown-label p {
+    font-size: 8px;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  .countdown-grid {
+    gap: 5px;
+  }
+
+
+  .countdown-box {
+    min-height: 68px;
+
+    border-radius: 8px;
+  }
+
+
+  .countdown-box strong {
+    font-size: 23px;
+  }
+
+
+  .countdown-box span {
+    margin-top: 5px;
+
+    font-size: 6px;
+  }
+
+
+  .countdown-bottom {
+    width: 100%;
+  }
+
+
+  .countdown-bottom p {
+    font-size: 9px;
+  }
+
+
+  /* EVENTS */
+
+  .events-heading > p {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .events-heading h3 {
+    font-size: 27px;
+  }
+
+
+  .wedding-event-card h4 {
+    font-size: 22px;
+  }
+
+
+  .event-location-btn {
+    width: 220px;
+  }
+
+
+  .events-footer {
+    width: 100%;
+  }
+
+
+  .events-footer p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .scratch-card-revealed,
+  .scratch-revealed-message,
+  .countdown-after-reveal,
+  .wedding-events-reveal,
+  .scratch-hand,
+  .countdown-corner-flower {
+    animation: none !important;
+  }
+
+
+  .wedding-event-card,
+  .countdown-box,
+  .event-location-btn,
+  .wedding-scratch-card {
+    transition: none !important;
+  }
+
+}
+
+.half_line{
+  height:10px;
+  width: 100px;
+}
+
+.temple-new{
+  height: 40px;
+  width: 40px;
+}

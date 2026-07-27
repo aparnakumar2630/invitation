@@ -1,10 +1,22 @@
-import Hero from "./components/Hero/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import TempleEntry from "./components/TempleEntry/TempleEntry";
+import WeddingCountdown from "./components/Countdown/WeddingCountdown";
 
 function App() {
   return (
-    <TempleEntry/>
-    // <Hero/>
+    <BrowserRouter>
+      <Routes>
+
+        Temple opening page
+        <Route
+          path="/"
+          element={<TempleEntry />}
+        />
+
+      </Routes>
+    </BrowserRouter>
+    // <WeddingCountdown/>
   );
 }
 

@@ -54,7 +54,8 @@
     cubic-bezier(.16, 1, .3, 1)
     forwards;
 
-  pointer-events: none;
+  /* IMPORTANT */
+  pointer-events: auto;
 }
 
 
@@ -1113,4 +1114,19 @@ and
       .01ms !important;
   }
 
+}
+
+.entry-wrapper.opening .temple-camera {
+  transform: scale(4.3);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  visibility: hidden;
+
+  transition:
+    transform 3s cubic-bezier(.65, 0, .22, 1),
+    opacity .55s ease 2.35s,
+    visibility 0s linear 3s;
 }
