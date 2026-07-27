@@ -4,16 +4,16 @@
 
 
 /* =========================================================
-   MAIN
+   MAIN WRAPPER
 ========================================================= */
 
 .entry-wrapper {
+  position: relative;
+
   width: 100vw;
 
   height: 100vh;
   height: 100svh;
-
-  position: relative;
 
   overflow: hidden;
 
@@ -27,6 +27,7 @@
 
 /* =========================================================
    HERO
+   Hero mounts only after click from JSX
 ========================================================= */
 
 .entry-hero {
@@ -68,8 +69,7 @@
   0% {
     opacity: 0;
 
-    transform:
-      scale(1.06);
+    transform: scale(1.06);
 
     filter:
       brightness(.65)
@@ -83,8 +83,7 @@
   100% {
     opacity: 1;
 
-    transform:
-      scale(1);
+    transform: scale(1);
 
     filter:
       brightness(1)
@@ -107,8 +106,7 @@
 
   z-index: 10;
 
-  transform-origin:
-    center center;
+  transform-origin: center center;
 
   transform:
     translate3d(0, 0, 0)
@@ -132,12 +130,11 @@
 }
 
 
-/*
-   CAMERA ENTERS THROUGH TEMPLE
-*/
+/* Camera moves through entrance */
 
 .entry-wrapper.opening
 .temple-camera {
+
   transform:
     translate3d(0, 0, 0)
     scale(4.3);
@@ -149,7 +146,7 @@
 
 
 /* =========================================================
-   TEMPLE FRAME
+   TEMPLE BACKGROUND / FRAME
 ========================================================= */
 
 .temple-frame {
@@ -160,7 +157,16 @@
   width: 100%;
   height: 100%;
 
-  object-fit: fill;
+  /*
+    IMPORTANT:
+    Don't stretch temple differently
+    depending on browser resolution.
+  */
+
+  object-fit: cover;
+
+  object-position:
+    center center;
 
   z-index: 5;
 
@@ -176,28 +182,40 @@
 
 /* =========================================================
    DOOR CONTAINER
+
+   IMPORTANT FIX:
+   Door width is calculated from HEIGHT.
+
+   This avoids:
+   Local = correct
+   Live  = center gap
 ========================================================= */
 
 .door-container {
   position: absolute;
 
-  top: 55%;
   left: 50%;
+  top: 56%;
 
   transform:
     translate(-50%, -50%)
     translateZ(25px);
 
-  width:
-    clamp(420px, 42vw, 680px);
+  /*
+    Keep the complete door aspect ratio stable.
+  */
 
-  height: 88vh;
+  height: min(88vh, 900px);
+
+  width: min(70.4vh, 720px);
 
   z-index: 20;
 
   perspective: 2500px;
 
   transform-style: preserve-3d;
+
+  overflow: visible;
 }
 
 
@@ -211,19 +229,31 @@
 
   top: 0;
 
-  width: 50%;
+  /*
+    Slight 1px overlap prevents
+    browser sub-pixel center gap.
+  */
+
+  width: calc(50% + 1px);
+
   height: 100%;
 
-  object-fit: contain;
+  /*
+    DO NOT use contain here.
 
-  transform-style:
-    preserve-3d;
+    Both images must completely occupy
+    their half of the door container.
+  */
 
-  backface-visibility:
-    hidden;
+  object-fit: fill;
 
-  -webkit-backface-visibility:
-    hidden;
+  display: block;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
 
   transition:
     transform
@@ -234,24 +264,35 @@
     1.8s
     ease;
 
-  will-change:
-    transform;
+  will-change: transform;
 }
 
+
+/* =========================================================
+   LEFT DOOR
+========================================================= */
 
 .left-door {
   left: 0;
 
   transform-origin:
     left center;
+
+  margin-right: -1px;
 }
 
+
+/* =========================================================
+   RIGHT DOOR
+========================================================= */
 
 .right-door {
   right: 0;
 
   transform-origin:
     right center;
+
+  margin-left: -1px;
 }
 
 
@@ -269,7 +310,9 @@
   filter:
     brightness(.62)
     drop-shadow(
-      20px 5px 22px
+      20px
+      5px
+      22px
       rgba(0, 0, 0, .5)
     );
 }
@@ -285,7 +328,9 @@
   filter:
     brightness(.62)
     drop-shadow(
-      -20px 5px 22px
+      -20px
+      5px
+      22px
       rgba(0, 0, 0, .5)
     );
 }
@@ -305,8 +350,7 @@
     translate(-50%, -50%)
     translateZ(80px);
 
-  width:
-    min(380px, 82%);
+  width: min(380px, 82%);
 
   z-index: 100;
 
@@ -315,6 +359,8 @@
   flex-direction: column;
 
   align-items: center;
+
+  justify-content: center;
 
   text-align: center;
 
@@ -328,20 +374,25 @@
 
   transition:
     opacity .45s ease,
-    transform .65s
+
+    transform
+    .65s
     cubic-bezier(.16, 1, .3, 1),
+
     filter .45s ease;
 }
 
 
-/* hide content when entering */
+/* =========================================================
+   HIDE WELCOME WHEN OPENING
+========================================================= */
 
 .entry-wrapper.opening
 .temple-welcome {
+
   opacity: 0;
 
-  filter:
-    blur(5px);
+  filter: blur(5px);
 
   transform:
     translate(-50%, -50%)
@@ -353,10 +404,12 @@
 
 
 /* =========================================================
-   SMALL HEADING
+   OPTIONAL SMALL HEADING
 ========================================================= */
 
 .welcome-small {
+  margin-bottom: 8px;
+
   font-family:
     "Cormorant Garamond",
     Georgia,
@@ -369,21 +422,19 @@
   letter-spacing: 3.5px;
 
   color: #e5c276;
-
-  margin-bottom: 8px;
 }
 
 
 /* =========================================================
-   ORNAMENT
+   OPTIONAL ORNAMENT
 ========================================================= */
 
 .welcome-ornament {
+  margin-bottom: 5px;
+
   font-size: 25px;
 
   color: #d7ad58;
-
-  margin-bottom: 5px;
 
   animation:
     ornamentGlow
@@ -397,6 +448,7 @@
 
   0%,
   100% {
+
     opacity: .65;
 
     filter:
@@ -406,7 +458,9 @@
       );
   }
 
+
   50% {
+
     opacity: 1;
 
     filter:
@@ -419,7 +473,7 @@
 
 
 /* =========================================================
-   NAMES
+   OPTIONAL WELCOME NAMES
 ========================================================= */
 
 .temple-welcome h1 {
@@ -460,7 +514,7 @@
 
 
 /* =========================================================
-   DESCRIPTION
+   OPTIONAL DESCRIPTION
 ========================================================= */
 
 .temple-welcome p {
@@ -497,7 +551,8 @@
   min-width: 235px;
 
   padding:
-    13px 21px;
+    13px
+    21px;
 
   border:
     1px solid
@@ -516,8 +571,8 @@
   background:
     linear-gradient(
       135deg,
-      rgba(95, 50, 21, .88),
-      rgba(52, 21, 14, .92)
+      rgba(95, 50, 21, .92),
+      rgba(52, 21, 14, .95)
     );
 
   box-shadow:
@@ -538,7 +593,9 @@
 }
 
 
-/* GOLD OUTER LINE */
+/* =========================================================
+   INNER GOLD BORDER
+========================================================= */
 
 .temple-enter-btn::after {
   content: "";
@@ -569,6 +626,7 @@
   left: -70%;
 
   width: 50%;
+
   height: 200%;
 
   transform:
@@ -594,10 +652,13 @@
 
   0%,
   65% {
+
     left: -70%;
   }
 
+
   100% {
+
     left: 130%;
   }
 }
@@ -640,6 +701,8 @@
   font-weight: 600;
 
   letter-spacing: .8px;
+
+  white-space: nowrap;
 }
 
 
@@ -662,8 +725,7 @@
     translateY(-3px)
     scale(1.025);
 
-  border-color:
-    #f0cf83;
+  border-color: #f0cf83;
 
   box-shadow:
     0 15px 45px
@@ -680,13 +742,25 @@
 
 .temple-enter-btn:hover
 .enter-arrow {
+
   transform:
     translateX(4px);
 }
 
 
 /* =========================================================
-   BOTTOM WORD
+   BUTTON ACTIVE
+========================================================= */
+
+.temple-enter-btn:active {
+  transform:
+    translateY(0)
+    scale(.98);
+}
+
+
+/* =========================================================
+   BEGIN THE JOURNEY
 ========================================================= */
 
 .welcome-bottom {
@@ -717,23 +791,41 @@
 and
 (max-width: 1100px) {
 
+  /*
+    IMPORTANT:
+    Don't change door width using vw.
+
+    Only adjust overall height if required.
+  */
+
   .door-container {
-    width: 50vw;
-    height: 85vh;
+
+    height: min(85vh, 820px);
+
+    width: min(68vh, 656px);
   }
 
 
   .entry-wrapper.opening
   .temple-camera {
+
     transform:
       scale(3.4);
+
+    opacity: 0;
+  }
+
+
+  .temple-enter-btn {
+
+    min-width: 220px;
   }
 
 }
 
 
 /* =========================================================
-   NORMAL DESKTOP
+   DESKTOP
 ========================================================= */
 
 @media
@@ -742,15 +834,20 @@ and
 (max-width: 1600px) {
 
   .door-container {
-    width: 45vw;
-    height: 88vh;
+
+    height: min(88vh, 900px);
+
+    width: min(70.4vh, 720px);
   }
 
 
   .entry-wrapper.opening
   .temple-camera {
+
     transform:
       scale(4);
+
+    opacity: 0;
   }
 
 }
@@ -764,15 +861,20 @@ and
 (min-width: 1601px) {
 
   .door-container {
-    width: 38vw;
-    height: 90vh;
+
+    height: min(90vh, 960px);
+
+    width: min(72vh, 768px);
   }
 
 
   .entry-wrapper.opening
   .temple-camera {
+
     transform:
       scale(4.5);
+
+    opacity: 0;
   }
 
 }
@@ -785,20 +887,26 @@ and
 @media(max-width: 750px) {
 
   .entry-wrapper {
+
     height: 100svh;
   }
 
 
   /*
-     Hide desktop temple frame
+    For mobile we hide the desktop temple
+    frame and use full-screen doors.
   */
 
   .temple-frame {
+
     display: none;
   }
 
 
   .door-container {
+
+    position: absolute;
+
     inset: 0;
 
     top: 0;
@@ -807,6 +915,7 @@ and
     transform: none;
 
     width: 100vw;
+
     height: 100svh;
 
     perspective: 1800px;
@@ -815,7 +924,8 @@ and
 
   .left-door,
   .right-door {
-    width: 50vw;
+
+    width: calc(50vw + 1px);
 
     height: 100svh;
 
@@ -823,26 +933,50 @@ and
   }
 
 
+  .left-door {
+
+    left: 0;
+  }
+
+
+  .right-door {
+
+    right: 0;
+  }
+
+
   .temple-welcome {
-    width: 80vw;
+
+    left: 50%;
+    top: 50%;
+
+    width: 82vw;
+
+    transform:
+      translate(-50%, -50%)
+      translateZ(80px);
   }
 
 
   .temple-welcome h1 {
+
     font-size: 52px;
   }
 
 
   .temple-welcome p {
+
     font-size: 13px;
   }
 
 
   .temple-enter-btn {
+
     min-width: 215px;
 
     padding:
-      12px 18px;
+      12px
+      18px;
   }
 
 
@@ -883,11 +1017,13 @@ and
 @media(max-width: 480px) {
 
   .temple-welcome {
-    width: 86vw;
+
+    width: 88vw;
   }
 
 
   .welcome-small {
+
     font-size: 8px;
 
     letter-spacing: 2.5px;
@@ -895,17 +1031,62 @@ and
 
 
   .temple-welcome h1 {
+
     font-size: 46px;
   }
 
 
   .temple-welcome p {
+
     font-size: 12px;
   }
 
 
   .temple-enter-btn {
+
     min-width: 205px;
+
+    padding:
+      11px
+      16px;
+  }
+
+
+  .enter-text {
+
+    font-size: 13px;
+  }
+
+
+  .welcome-bottom {
+
+    letter-spacing: 2.5px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SHORT LAPTOP SCREENS
+   Example: browser with bookmarks/taskbar reducing height
+========================================================= */
+
+@media
+(min-width: 751px)
+and
+(max-height: 700px) {
+
+  .door-container {
+
+    height: 86vh;
+
+    width: 68.8vh;
+  }
+
+
+  .temple-enter-btn {
+
+    transform: scale(.92);
   }
 
 }
@@ -930,7 +1111,6 @@ and
 
     animation-duration:
       .01ms !important;
-
   }
 
 }
