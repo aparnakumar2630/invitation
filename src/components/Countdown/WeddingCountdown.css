@@ -1257,7 +1257,7 @@
 ========================================================= */
 
 .event-icon {
-  position: absolute;
+  position: absolute !important;
 
   top: -25px;
   left: 50%;
@@ -1517,7 +1517,7 @@
 
   padding:
     0
-    17px;
+    20px;
 
   display: flex;
   align-items: center;
@@ -1577,10 +1577,6 @@
   font-weight: 400;
 }
 
-
-.map-icon {
-  font-size: 18px;
-}
 
 
 /* =========================================================
@@ -2229,4 +2225,144 @@ background-position: bottom;
 .temple-new{
   height: 40px;
   width: 40px;
+}
+
+.scratch-hand-overlay {
+
+  position:absolute;
+
+  z-index:20;
+
+  width:70px;
+
+  height:70px;
+
+  right:35%;
+  bottom:25%;
+
+  pointer-events:none;
+
+  animation:
+    scratchMove
+    1.8s
+    ease-in-out
+    infinite;
+
+}
+
+
+.scratch-hand-overlay img {
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(
+      0 5px 8px
+      rgba(0,0,0,0.15)
+    );
+
+}
+
+
+
+@keyframes scratchMove {
+
+  0% {
+
+    transform:
+      translate(0,0)
+      rotate(-15deg);
+
+  }
+
+
+  50% {
+
+    transform:
+      translate(-25px,15px)
+      rotate(-25deg);
+
+  }
+
+
+  100% {
+
+    transform:
+      translate(0,0)
+      rotate(-15deg);
+
+  }
+
+}
+
+.marriage-card {
+  position: relative;
+  background: #fff;
+}
+
+/* bottom small sendoor image */
+.marriage-card::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 330px;   /* image width */
+  height: 303px;  /* image height */
+
+  background-image: url('../../assets/hero/home/sendoor.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  opacity: 0.18; /* light visibility */
+  z-index: 0;
+}
+
+/* keep content above image */
+.reception-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.reception-card {
+  position: relative;
+  background: #fff;
+}
+
+/* bottom small sendoor image */
+.reception-card::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 370px;   /* image width */
+  height: 330px;  /* image height */
+
+  background-image: url('../../assets/hero/home/reception.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  opacity: 0.20; /* light visibility */
+  z-index: 0;
+}
+
+/* keep content above image */
+.marriage-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.location-img{
+  height: 35px;
+  width: 35px;
 }

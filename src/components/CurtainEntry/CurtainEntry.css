@@ -183,7 +183,7 @@
     border-radius: 50%;
     border: 2px solid #ffd7001c;
     padding: 2px;
-    margin-top: 10%;
+    margin-top: 30%;
 
 }
 
@@ -206,7 +206,7 @@
 
     text-transform:uppercase;
 
-    padding:16px 42px;
+    padding:16px 50px;
 
     border-radius:60px;
 
@@ -218,11 +218,12 @@
 
 .tap-btn:hover{
 
-    background:#d8b15a;
+    background:#d8b05aac;
 
     color:white;
 
     transform:translateY(-3px);
+    border:3px solid #56028a71;
 
 }
 
@@ -248,6 +249,7 @@
 .monogram{
 
     width:200px;
+                margin-bottom: 50%;
 
 }
 
@@ -255,7 +257,7 @@
 
     font-size:14px;
 
-    padding:12px 28px;
+    padding:12px 16px;
 
 }
 
@@ -278,7 +280,7 @@
 
 .tap-btn{
               font-size: 17px;
-            padding: 12px 28px;
+            padding: 12px 16px;
             width: 199px;
 }
 
@@ -392,4 +394,29 @@
 
 .welcome{
     z-index:60;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .left-curtain,
+.right-curtain{
+    width:49.9%;
+    height:100%;
+}
+}
+
+.enter-arrow {
+  color: #e0b761;
+
+  font-size: 18px;
+
+  transition:
+    transform .3s ease;
+}
+
+.tap-btn:hover
+.enter-arrow {
+
+  transform:
+    translateX(4px);
+    color: purple;
 }

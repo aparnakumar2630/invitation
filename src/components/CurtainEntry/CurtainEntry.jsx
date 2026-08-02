@@ -13,6 +13,7 @@ import topFloral from "../../assets/hero/Curtains/top-floral.png";
 import bell from "../../assets/hero/Curtains/bell.png";
 import lotus from "../../assets/hero/Curtains/lotus.png";
 import half_line from '../../assets/hero/home/half_line.png'
+import Family from "../Family/Family";
 
 export default function CurtainEntry() {
 const [open, setOpen] = useState(false);
@@ -82,6 +83,10 @@ console.log(showHero,"showHero")
                             onClick={handleOpen}
                         >
                             Tap To Open
+
+                             <span className="enter-arrow">
+                    →
+                  </span>
                         </div>
                         <div className="lotus-section">
                             <img src={half_line} className="half_line2 me-5" />
@@ -98,7 +103,13 @@ console.log(showHero,"showHero")
             </div>
 
      {showHero && (
+        <>
+
+
             <WeddingCountdown />
+            {/* <Family/> */}
+            </>
+
           )}
             </>
     );

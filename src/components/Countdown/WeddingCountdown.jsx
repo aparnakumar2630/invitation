@@ -12,6 +12,9 @@ import divider from '../../assets/hero/home/divider.png'
 import temple from '../../assets/hero/home/temple.png'
 import glass from '../../assets/hero/home/glass.png'
 import bg from '../../assets/hero/home/countdownbg1.png'
+import hand from '../../assets/hero/home/hand.png'
+import sendoor from '../../assets/hero/home/sendoor.jpg'
+import location from '../../assets/hero/home/location.png'
 
 /* =========================================================
    WEDDING DATE
@@ -403,7 +406,24 @@ export default function WeddingCountdown() {
 
   }, [revealed]);
 
+const [isScratching,setIsScratching] = useState(false);
 
+const startScratch = (event) => {
+
+  if (revealed) return;
+
+  setIsScratching(true);
+
+  event.preventDefault();
+
+  isDrawingRef.current = true;
+
+  lastPointRef.current =
+    getPointerPosition(event);
+
+  scratch(event);
+
+};
   /* =======================================================
      GET POINTER POSITION
   ======================================================= */
@@ -448,26 +468,6 @@ export default function WeddingCountdown() {
      START SCRATCH
   ======================================================= */
 
-  const startScratch = (
-    event
-  ) => {
-
-    if (revealed) return;
-
-
-    event.preventDefault();
-
-
-    isDrawingRef.current = true;
-
-
-    lastPointRef.current =
-      getPointerPosition(event);
-
-
-    scratch(event);
-
-  };
 
 
   /* =======================================================
@@ -957,6 +957,12 @@ export default function WeddingCountdown() {
         =========================================== */}
 
         {!revealed ? (
+<>
+{ !isScratching && (
+  <div className="scratch-hand-overlay">
+     <img src={hand} alt="" />
+  </div>
+)}
 
           <div className="scratch-instruction">
 
@@ -970,6 +976,8 @@ export default function WeddingCountdown() {
             </p>
 
           </div>
+</>
+
 
         ) : (
 
@@ -1263,7 +1271,7 @@ export default function WeddingCountdown() {
                 >
 
                   <span className="map-icon">
-                    ◫
+                                        <img src={location} className="location-img"/>
                   </span>
 
                   <span>
@@ -1306,7 +1314,6 @@ export default function WeddingCountdown() {
                   marriage-card
                 "
               >
-
                 <div className="event-icon">
                   <img src={temple} className="temple-new"></img>
                 </div>
@@ -1413,7 +1420,7 @@ export default function WeddingCountdown() {
                 >
 
                   <span className="map-icon">
-                    ◫
+                    <img src={location} className="location-img"/>
                   </span>
 
                   <span>
@@ -1455,7 +1462,9 @@ export default function WeddingCountdown() {
 
       )}
 
+
     </section>
+
 
   );
 }
