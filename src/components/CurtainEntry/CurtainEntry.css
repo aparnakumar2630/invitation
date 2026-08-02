@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+
+
+.curtain-wrapper{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#fbf6fb;
+}
+
+/* HERO */
+
+.hero-layer{
+    position:absolute;
+    inset:0;
+    z-index:100;
+
+    opacity:0;
+    transform:scale(.96);
+
+    transition:
+      opacity 1.3s ease,
+      transform 1.8s ease;
+
+    overflow-y:auto;
+}
+
+
+.show-hero{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+.hero-content{
+    width:100%;
+    height:100vh;
+}
+
+/* Curtain Screen */
+
+.curtain-screen{
+
+    position:absolute;
+    inset:0;
+
+    z-index:10;
+
+}
+
+/* Top Floral */
+
+.top-floral{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:20;
+
+    pointer-events:none;
+
+}
+
+/* Bottom Flowers */
+
+.bottom-left{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:250px;
+
+    z-index:21;
+
+}
+
+.bottom-right{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:250px;
+
+    z-index:21;
+
+}
+
+/* Curtains */
+
+.left-curtain{
+
+    position:absolute;
+
+    left:0;
+    top:0px;
+
+    width:49.9%;
+    object-fit:cover;
+
+    z-index:15;
+
+    transition:2.2s cubic-bezier(.19,1,.22,1);
+
+}
+
+.right-curtain{
+
+    position:absolute;
+
+    right:0;
+    top:0px;
+
+    width:50%;
+
+    object-fit:cover;
+
+    z-index:15;
+
+    transition:2.2s cubic-bezier(.19,1,.22,1);
+
+}
+
+/* Open */
+
+.open-left{
+
+    transform:translateX(-100%);
+
+}
+
+.open-right{
+
+    transform:translateX(100%);
+
+}
+
+/* Welcome */
+
+.welcome{
+
+    position:absolute;
+
+    left:50%;
+    top:52%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:30;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    transition:.5s;
+
+}
+
+.fade-out{
+
+    opacity:0;
+
+}
+
+/* Monogram */
+
+.monogram{
+
+    width:200px;
+
+    margin-bottom:30px;
+    background: #452956cf;
+    border-radius: 50%;
+    border: 2px solid #ffd7001c;
+    padding: 2px;
+    margin-top: 10%;
+
+}
+
+/* Button */
+
+.tap-btn{
+
+    font-family: "Cormorant Garamond", serif;
+    border:1px solid #c9a75d;
+
+    background:rgba(255, 255, 255, 0);
+
+    backdrop-filter:blur(10px);
+
+    color:#eacf8f;
+
+    font-size:22px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    padding:16px 42px;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tap-btn:hover{
+
+    background:#d8b15a;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.left-curtain,
+.right-curtain{
+
+    width:49.8%;
+    height: 100%;
+
+}
+
+.bottom-left,
+.bottom-right{
+
+    width:140px;
+
+}
+
+.monogram{
+
+    width:200px;
+
+}
+
+.tap-btn{
+
+    font-size:14px;
+
+    padding:12px 28px;
+
+}
+
+@media (max-width:768px){
+
+.left-curtain,
+.right-curtain{
+    width:49.9%;
+    height:100%;
+}
+
+.bottom-left,
+.bottom-right{
+    width:140px;
+}
+
+.monogram{
+    width:200px;
+}
+
+.tap-btn{
+              font-size: 17px;
+            padding: 12px 28px;
+            width: 199px;
+}
+
+/* Bells */
+
+.left-bell,
+.right-bell{
+    display:block;
+    position:absolute;
+    top:15px;
+    width:70px;
+    z-index:25;
+    pointer-events:none;
+}
+
+.left-bell{
+    left:10px;
+}
+
+.right-bell{
+    right:10px;
+}
+
+}
+
+}
+
+
+.left-bell,
+.right-bell{
+    transform-origin:top center;
+    animation:bellSwing 3s ease-in-out infinite;
+    height: 100px;
+    width: 45px;
+}
+
+.right-bell{
+    animation-delay:.5s;
+}
+
+@keyframes bellSwing{
+
+0%{
+    transform:rotate(0deg);
+}
+
+20%{
+    transform:rotate(-6deg);
+}
+
+40%{
+    transform:rotate(6deg);
+}
+
+60%{
+    transform:rotate(-4deg);
+}
+
+80%{
+    transform:rotate(3deg);
+}
+
+100%{
+    transform:rotate(0deg);
+}
+
+}
+.lotus-img{
+    height: 70px;
+    width: 70px;
+}
+
+.half_line2{
+  height:10px;
+  width: 100px;
+  margin-top: 35px;
+}
+.lotus-section{
+    display: flex;
+}
+
+.hide-curtain{
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .8s ease;
+}
+
+
+.hero-layer{
+    z-index:100;
+}
+
+.curtain-screen{
+    z-index:50;
+}
+
+.left-curtain,
+.right-curtain{
+    z-index:55;
+}
+
+.left-bell,
+.right-bell{
+    z-index:56;
+}
+
+.bottom-left,
+.bottom-right{
+    z-index:57;
+}
+
+.welcome{
+    z-index:60;
+}

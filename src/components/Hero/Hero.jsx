@@ -3,7 +3,7 @@ import "./Hero.css";
 
 import handVideo from "../../assets/hero/home/handjoining.webm";
 import heroBg from "../../assets/hero/home/bannerbg.png";
-import AJImg from "../../assets/hero/home/JA3.png";
+import AJImg from "../../assets/hero/home/JA.png";
 
 import lotus from '../../assets/hero/home/lotus3.png'
 

@@ -89,19 +89,19 @@ export default function WeddingCountdown() {
 
       const days = Math.floor(
         difference /
-          (1000 * 60 * 60 * 24)
+        (1000 * 60 * 60 * 24)
       );
 
       const hours = Math.floor(
         (difference /
           (1000 * 60 * 60)) %
-          24
+        24
       );
 
       const minutes = Math.floor(
         (difference /
           (1000 * 60)) %
-          60
+        60
       );
 
       const seconds = Math.floor(
@@ -782,25 +782,25 @@ export default function WeddingCountdown() {
           MINIMAL CORNER FLOWERS
       =============================================== */}
 
-    {/* =================================================
+      {/* =================================================
     FOUR CORNER FLOWERS
 ================================================= */}
 
-<div className="countdown-corner-flower flower-top-left">
-  <img src={flower} alt="" />
-</div>
+      <div className="countdown-corner-flower flower-top-left">
+        <img src={flower} alt="" />
+      </div>
 
-<div className="countdown-corner-flower flower-top-right">
-  <img src={flower} alt="" />
-</div>
+      <div className="countdown-corner-flower flower-top-right">
+        <img src={flower} alt="" />
+      </div>
 
-<div className="countdown-corner-flower flower-bottom-left">
-  <img src={flower} alt="" />
-</div>
+      <div className="countdown-corner-flower flower-bottom-left">
+        <img src={flower} alt="" />
+      </div>
 
-<div className="countdown-corner-flower flower-bottom-right">
-  <img src={flower} alt="" />
-</div>
+      <div className="countdown-corner-flower flower-bottom-right">
+        <img src={flower} alt="" />
+      </div>
 
 
       {/* ===============================================
@@ -817,7 +817,7 @@ export default function WeddingCountdown() {
           <span />
 
           <strong>
-            <img src={borderLine}/>
+            <img src={borderLine} />
           </strong>
 
           <span />
@@ -854,10 +854,9 @@ export default function WeddingCountdown() {
           ref={scratchAreaRef}
           className={`
             wedding-scratch-card
-            ${
-              revealed
-                ? "scratch-card-revealed"
-                : ""
+            ${revealed
+              ? "scratch-card-revealed"
+              : ""
             }
           `}
         >
@@ -1082,11 +1081,11 @@ export default function WeddingCountdown() {
 
             <div className="countdown-bottom d-flex">
 
-                <img src={half_line} className="half_line"/>
+              <img src={half_line} className="half_line" />
               <p>
-                See you on our special day 
+                See you on our special day
               </p>
-<img src={half_line } className="half_line"/>
+              <img src={half_line} className="half_line" />
             </div>
 
 
@@ -1132,8 +1131,8 @@ export default function WeddingCountdown() {
                 <span />
 
                 <strong>
-            <img src={borderLine}/>
-                  
+                  <img src={borderLine} />
+
                 </strong>
 
                 <span />
@@ -1162,7 +1161,7 @@ export default function WeddingCountdown() {
               >
 
                 <div className="event-icon">
-                                 <img src={glass} className="temple-new"></img>
+                  <img src={glass} className="temple-new"></img>
 
                 </div>
 
@@ -1203,29 +1202,29 @@ export default function WeddingCountdown() {
 
                     <span>
                       <svg
-  width="20"
-  height="20"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M12 21C12 21 19 14.5 19 9C19 5.134 15.866 2 12 2C8.134 2 5 5.134 5 9C5 14.5 12 21 12 21Z"
-    stroke="#B58A32"
-    fill="#B58A32"
-    stroke-width="1.4"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <circle
-    cx="12"
-    cy="9"
-    r="2.4"
-    stroke="#ffffff"
-    fill="#fff"
-    stroke-width="1.5"
-  />
-</svg>
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 21C12 21 19 14.5 19 9C19 5.134 15.866 2 12 2C8.134 2 5 5.134 5 9C5 14.5 12 21 12 21Z"
+                          stroke="#B58A32"
+                          fill="#B58A32"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <circle
+                          cx="12"
+                          cy="9"
+                          r="2.4"
+                          stroke="#ffffff"
+                          fill="#fff"
+                          stroke-width="1.5"
+                        />
+                      </svg>
                     </span>
 
                     <strong>
@@ -1258,7 +1257,7 @@ export default function WeddingCountdown() {
                   className="event-location-btn"
                   onClick={() =>
                     openLocation(
-                      "https://www.google.com/maps/search/?api=1&query=Lakshmi+Hall+Kolathur+Mettur"
+                      "https://www.google.com/maps/place/LAKSHMI+THIRUMANA+MANDABAM/@11.8463563,77.7469119,17z/data=!3m1!4b1!4m6!3m5!1s0x3baeadff2d020987:0x5a9f1b3e1ed15afa!8m2!3d11.8463563!4d77.7494868!16s%2Fg%2F11gxmhhv_p!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D"
                     )
                   }
                 >
@@ -1287,7 +1286,7 @@ export default function WeddingCountdown() {
               <div className="events-center-ornament">
 
                 <div className="center-decoration">
-                  <img src={divider}/>
+                  <img src={divider} />
                 </div>
 
                 <strong>
@@ -1309,7 +1308,7 @@ export default function WeddingCountdown() {
               >
 
                 <div className="event-icon">
-                <img src={temple} className="temple-new"></img>
+                  <img src={temple} className="temple-new"></img>
                 </div>
 
 
@@ -1354,30 +1353,30 @@ export default function WeddingCountdown() {
                   <div className="location-title">
 
                     <span>
-                       <svg
-  width="20"
-  height="20"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M12 21C12 21 19 14.5 19 9C19 5.134 15.866 2 12 2C8.134 2 5 5.134 5 9C5 14.5 12 21 12 21Z"
-    stroke="#B58A32"
-    fill="#B58A32"
-    stroke-width="1.4"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <circle
-    cx="12"
-    cy="9"
-    r="2.4"
-    stroke="#ffffff"
-    fill="#fff"
-    stroke-width="1.5"
-  />
-</svg>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 21C12 21 19 14.5 19 9C19 5.134 15.866 2 12 2C8.134 2 5 5.134 5 9C5 14.5 12 21 12 21Z"
+                          stroke="#B58A32"
+                          fill="#B58A32"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <circle
+                          cx="12"
+                          cy="9"
+                          r="2.4"
+                          stroke="#ffffff"
+                          fill="#fff"
+                          stroke-width="1.5"
+                        />
+                      </svg>
                     </span>
 
                     <strong>
@@ -1408,7 +1407,7 @@ export default function WeddingCountdown() {
                   className="event-location-btn"
                   onClick={() =>
                     openLocation(
-                      "https://www.google.com/maps/search/?api=1&query=Sivan+Temple+Mettur"
+                      "https://www.google.com/maps/place/Nelleeswarar+Temple/@11.8071993,77.7721944,17z/data=!3m1!4b1!4m6!3m5!1s0x3baead34ea6fd49f:0xbfd345049517490e!8m2!3d11.8071993!4d77.7721944!16s%2Fg%2F11c7t0v9sp!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D"
                     )
                   }
                 >

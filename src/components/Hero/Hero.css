@@ -1622,7 +1622,7 @@ and
 
   .hero-tagline {
 
-    bottom: 135px;
+    bottom: 170px;
 
   }
 
@@ -1695,7 +1695,7 @@ and
     bottom:195px
   }
   .hero-footer {
-bottom:60px
+bottom:80px
   }
   .footer-eyebrow{
     display: none;
@@ -1744,8 +1744,8 @@ bottom:60px
 
     top: 3.5%;
 
-    width: 82px;
-    height: 55px;
+    width:90px;
+    height: 70px;
 
   }
 
@@ -1811,7 +1811,7 @@ bottom:60px
   .groom-name {
 
     font-size:
-      clamp(75px, 15vw, 72px);
+      clamp(85px, 15vw, 72px);
 
   }
 
@@ -1819,7 +1819,7 @@ bottom:60px
   .bride-name {
 
     font-size:
-      clamp(75px, 16vw, 78px);
+      clamp(85px, 16vw, 78px);
 
   }
 
@@ -2035,21 +2035,21 @@ bottom:60px
 
   .groom-name {
 
-    font-size: 52px;
+    font-size: 65px;
 
   }
 
 
   .bride-name {
 
-    font-size: 58px;
+    font-size: 65px;
 
   }
 
 
   .hero-tagline {
 
-    bottom: 273px;
+    bottom: 250px;
 
   }
 

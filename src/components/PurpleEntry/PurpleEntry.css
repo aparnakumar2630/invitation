@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.purple-entry{
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.purple-entry-overlay{
+    position:absolute;
+    inset:0;
+    /* background:rgba(255,255,255,.08);
+    backdrop-filter:blur(.8px); */
+}
+
+.purple-entry-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:700px;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.purple-entry-heart .purple-entry-line{
+    width:70px;
+    height:2px;
+    background:#b89242;
+    margin:0 auto 30px;
+}
+
+.purple-entry-name{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 72px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #4A2A73;
+    line-height: 1.1;
+}
+
+.purple-entry-and{
+    font-family:'Cormorant SC',serif;
+    color:#b89242;
+    font-size:55px;
+}
+
+.purple-entry-heart{
+    color:#c09b42;
+    font-size:20px;
+    margin:22px 0;
+}
+
+.purple-entry-subtitle{
+    font-family:'Cinzel',serif;
+    color:#523072;
+    font-size:18px;
+    line-height:2;
+    letter-spacing:3px;
+    margin-bottom:55px;
+}
+
+.purple-entry-btn{
+    width:430px;
+    height:82px;
+    border-radius:60px;
+    border:2px solid #caa24d;
+    background:rgba(255,255,255,.94);
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12),
+    inset 0 0 0 1px rgba(255,255,255,.8);
+    color:#4c2677;
+    font-size:28px;
+    font-family:'Cormorant Garamond',serif;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    transition:.35s;
+}
+
+.purple-entry-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 25px 45px rgba(0,0,0,.18);
+}
+
+.purple-entry-btn svg{
+    color:#b89242;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .purple-entry-name{
+        font-size:58px;
+    }
+
+    .purple-entry-btn{
+        width:360px;
+        height:74px;
+        font-size:24px;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .purple-entry{
+        background-position:center;
+        height:100svh;
+    }
+
+    .purple-entry-content{
+        padding:0px 18px 0px 41px;
+        top: 9%;
+    }
+
+    .purple-entry-name{
+        font-size:44px;
+    }
+
+    .purple-entry-and{
+        font-size:42px;
+    }
+
+    .purple-entry-subtitle{
+        font-size:14px;
+        letter-spacing:2px;
+        margin-bottom:40px;
+    }
+
+    .purple-entry-btn{
+        width:290px;
+        height:62px;
+        font-size:22px;
+        gap:15px;
+    }
+
+    .purple-entry-btn svg{
+        width:22px;
+        height:22px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:420px){
+
+    .purple-entry-name{
+        font-size:39px;
+    }
+
+    .purple-entry-subtitle{
+        font-size:10px;
+    }
+
+    .purple-entry-btn{
+        width:236px;
+        height:55px;
+        font-size:20px;
+        margin-left: 20px;
+    }
+
+}
