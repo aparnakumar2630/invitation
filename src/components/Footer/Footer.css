@@ -1,0 +1,841 @@
+/* =========================================================
+   PREMIUM WEDDING FOOTER
+   ========================================================= */
+
+.footer-body {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+
+  background: #2a012c;
+
+  color: #f8e9cf;
+
+  overflow: hidden;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.footer-main {
+  position: relative;
+  z-index: 5;
+
+  width: min(1180px, 92%);
+
+  min-height: 295px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  padding: 42px 0 20px;
+}
+
+
+/* =========================================================
+   COLUMNS
+   ========================================================= */
+
+.footer-column {
+  position: relative;
+
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 15px 35px;
+}
+
+
+/* Vertical separators */
+
+.footer-column:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 8%;
+
+  width: 1px;
+  height: 84%;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(218, 178, 78, 0.55),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   MONOGRAM
+   ========================================================= */
+
+.footer-monogram {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  margin-bottom: 13px;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(77%)
+    sepia(43%)
+    saturate(600%)
+    hue-rotate(355deg)
+    brightness(98%);
+}
+
+
+.footer-quote {
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.55;
+
+  font-style: italic;
+
+  color: #ead9c7;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.footer-socials {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  color: #fff4df;
+
+  background:
+    rgba(184, 93, 177, 0.42);
+
+  border: 1px solid rgba(222, 182, 88, 0.25);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.footer-socials a:hover {
+  transform: translateY(-4px);
+
+  background: rgba(213, 151, 203, 0.55);
+
+  border-color: #d8b35c;
+}
+
+
+/* =========================================================
+   THANK YOU
+   ========================================================= */
+
+.footer-thanks h2 {
+  margin: 0;
+
+  color: #f1dfbd;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+}
+
+
+.footer-small-divider {
+  width: 90px;
+
+  margin: 9px 0 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #d7ad4d;
+
+  position: relative;
+}
+
+
+.footer-small-divider::before,
+.footer-small-divider::after {
+  content: "";
+
+  height: 1px;
+
+  width: 35px;
+
+  background: rgba(215, 173, 77, 0.55);
+}
+
+
+.footer-small-divider span {
+  margin: 0 8px;
+
+  font-size: 11px;
+}
+
+
+.footer-thanks p {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  color: #e8d8d5;
+}
+
+
+.footer-lotus {
+  width: 48px;
+
+  height: 48px;
+
+  object-fit: contain;
+
+  margin-top: 16px;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(79%)
+    sepia(52%)
+    saturate(590%)
+    hue-rotate(357deg)
+    brightness(105%);
+}
+
+
+/* =========================================================
+   RIGHT COUPLE
+   ========================================================= */
+
+.with-love {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+
+  font-style: italic;
+
+  color: #e7d8d1;
+}
+
+
+.footer-couple h3 {
+  margin: 0;
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  color: #f2e0c5;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   HEART DIVIDER
+   ========================================================= */
+
+.footer-heart-line {
+  width: 260px;
+
+  margin-top: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.footer-line {
+  width: 92px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0.75;
+}
+
+
+.footer-line-right {
+  transform: scaleX(-1);
+}
+
+
+.footer-heart {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  margin: 0 8px;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(76%)
+    sepia(54%)
+    saturate(600%)
+    hue-rotate(358deg)
+    brightness(105%);
+}
+
+
+/* =========================================================
+   TEMPLE SILHOUETTE
+   ========================================================= */
+
+.footer-temple {
+  position: absolute;
+
+  right: -100px;
+  bottom: 120px;
+  width: 750px;
+  height: 120px;
+
+  opacity: 0.08;
+
+  color: #d9b55c;
+
+  font-size: 150px;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FLOWERS
+   ========================================================= */
+
+.footer-flower {
+  position: absolute;
+
+  z-index: 2;
+
+  color: #e9d3dc;
+
+  opacity: 0.75;
+
+  pointer-events: none;
+
+  font-size: 58px;
+}
+
+
+.footer-flower span {
+  position: absolute;
+
+  color: #f1dce5;
+}
+
+
+.footer-flower-left {
+  left: -18px;
+  top: -18px;
+
+  transform: rotate(-12deg);
+}
+
+
+.footer-flower-left span:nth-child(2) {
+  left: 38px;
+  top: 35px;
+
+  font-size: 42px;
+}
+
+
+.footer-flower-left span:nth-child(3) {
+  left: 5px;
+  top: 65px;
+
+  font-size: 35px;
+}
+
+
+.footer-flower-right {
+  right: -58px !important;
+
+  top: -55px;
+  transform: rotate(-15deg) !important;
+
+}
+
+
+.footer-flower-right span:nth-child(2) {
+  left: 38px;
+  top: 35px;
+
+  font-size: 42px;
+}
+
+
+.footer-flower-right span:nth-child(3) {
+  left: 5px;
+  top: 65px;
+
+  font-size: 35px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  min-height: 55px;
+
+  border-top: 1px solid rgba(207, 166, 73, 0.55);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 80px;
+
+  box-sizing: border-box;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #ddc9cb;
+
+  letter-spacing: 0.2px;
+
+  text-align: center;
+}
+
+
+.footer-bottom-decoration {
+  position: absolute;
+
+  left: 0;
+
+  font-size: 26px;
+
+  color: #d4a947;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.footer-top-button {
+  position: absolute;
+
+  right: 28px;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid #cda64c;
+
+  background: #3c123e;
+
+  color: #f0d28b;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footer-top-button:hover {
+  background: #512052;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    width: 94%;
+
+    padding-top: 35px;
+  }
+
+  .footer-column {
+    padding: 10px 20px;
+  }
+
+  .footer-monogram {
+    width: 80px;
+    height: 110px;
+  }
+
+  .footer-quote {
+    font-size: 15px;
+  }
+
+  .footer-thanks h2 {
+    font-size: 21px;
+
+    letter-spacing: 3px;
+  }
+
+  .footer-thanks p {
+    font-size: 14px;
+  }
+
+  .with-love {
+    font-size: 17px;
+  }
+
+  .footer-couple h3 {
+    font-size: 19px;
+  }
+
+  .footer-heart-line {
+    width: 210px;
+  }
+
+  .footer-line {
+    width: 70px;
+  }
+
+  .footer-temple {
+    width: 200px;
+    font-size: 120px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .footer-body {
+    min-height: auto;
+  }
+
+
+  .footer-main {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 55px 20px 25px;
+
+    gap: 0;
+  }
+
+
+  .footer-column {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 28px 15px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* Remove desktop vertical lines */
+
+  .footer-column:not(:last-child)::after {
+    display: none;
+  }
+
+
+  /* Add mobile horizontal separators */
+
+  .footer-column:not(:last-child)::before {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 20%;
+
+    width: 60%;
+    height: 1px;
+
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(218, 178, 78, 0.5),
+      transparent
+    );
+  }
+
+
+  .footer-monogram {
+    width: 80px;
+    height: 110px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .footer-quote {
+    font-size: 15px;
+  }
+
+
+  .footer-socials {
+    margin-top: 15px;
+  }
+
+
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .footer-thanks h2 {
+    font-size: 22px;
+  }
+
+
+  .footer-thanks p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .footer-lotus {
+    width: 70px;
+    height: 55px;
+  }
+
+
+  .with-love {
+    font-size: 18px;
+  }
+
+
+  .footer-couple h3 {
+    font-size: 30px;
+  }
+
+
+  .footer-heart-line {
+    width: 220px;
+
+    margin-top: 18px;
+  }
+
+
+  .footer-line {
+    width: 72px;
+  }
+
+
+  .footer-temple {
+    right: 0;
+    bottom: -25px;
+
+    width: 360px;
+
+    font-size: 110px;
+    opacity: 0.1 !important;
+  }
+
+
+  .footer-flower {
+    font-size: 42px;
+
+    opacity: 0.6;
+  }
+
+
+  .footer-flower-left {
+    left: -12px;
+    top: -52px;
+  }
+
+
+  .footer-flower-right {
+    right: -12px;
+    top: -60px;
+  }
+
+
+  .footer-bottom {
+    min-height: 70px;
+
+    padding: 10px 65px 10px 35px;
+  }
+
+
+  .footer-bottom p {
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+
+  .footer-bottom-decoration {
+    left: 8px;
+
+    font-size: 20px;
+  }
+
+
+  .footer-top-button {
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .footer-main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .footer-column {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+
+  .footer-couple h3 {
+    font-size: 30px;
+  }
+
+
+  .footer-heart-line {
+    width: 190px;
+  }
+
+
+  .footer-line {
+    width: 60px;
+  }
+
+
+  .footer-bottom {
+    padding-left: 28px;
+    padding-right: 58px;
+  }
+}
+
+.footer-flower{
+  height: 350px;
+  width: 350px;
+  right: 40px;
+  bottom: 25px;
+    transform: rotate(5deg);
+
+}
+
+.footer-flower-right2{
+  height: 350px;
+  width: 350px;
+}

@@ -1242,7 +1242,7 @@ const startScratch = (event) => {
                   </div>
 
                   <p>
-                    Near Kolathur,
+                    Kolathur Bus stand,
                     Mettur
                   </p>
 
@@ -1393,7 +1393,7 @@ const startScratch = (event) => {
                   </div>
 
                   <p>
-                    Mettur
+                    Nelleeswarar Temple, Mettur
                   </p>
 
                 </div>

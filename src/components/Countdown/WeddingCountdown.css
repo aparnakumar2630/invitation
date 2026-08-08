@@ -594,8 +594,6 @@
 
 
 .scratch-month-year small {
-  margin-top: 8px;
-
   color: var(--wc-gold);
 
   font-family: Georgia, serif;
@@ -1448,7 +1446,7 @@
 
 .event-location > p {
   margin:
-    4px
+    10px
     0
     0;
 
@@ -1843,7 +1841,7 @@ background-position: bottom;
   /* SCRATCH */
 
   .wedding-scratch-card {
-    height: 150px;
+    height: 170px;
 
     border-radius: 4px;
 
@@ -2045,7 +2043,7 @@ background-position: bottom;
   /* SCRATCH */
 
   .wedding-scratch-card {
-    height: 135px;
+    height: 167px;
 
     border-radius: 3px;
   }
@@ -2062,7 +2060,7 @@ background-position: bottom;
 
 
   .scratch-date-eyebrow {
-    font-size: 8px;
+    font-size: 12px;
 
     letter-spacing: 2.5px;
   }
@@ -2074,7 +2072,7 @@ background-position: bottom;
 
 
   .scratch-date-main > strong {
-    font-size: 37px;
+    font-size: 40px;
   }
 
 
@@ -2089,14 +2087,14 @@ background-position: bottom;
 
 
   .scratch-month-year span {
-    font-size: 13px;
+    font-size: 18px;
 
     letter-spacing: 2px;
   }
 
 
   .scratch-month-year small {
-    font-size: 9px;
+    font-size: 15px;
   }
 
 
