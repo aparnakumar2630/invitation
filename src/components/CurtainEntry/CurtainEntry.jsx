@@ -8,7 +8,7 @@ import bottomLeftFlower from "../../assets/hero/Curtains/bottom-left-flower.png"
 import bottomRightFlower from "../../assets/hero/Curtains/bottom-right-flower.png";
 import leftCurtain from "../../assets/hero/Curtains/left-curtain5.png";
 import rightCurtain from "../../assets/hero/Curtains/right-curtain5.png";
-import monogram from "../../assets/hero/Curtains/monogram.png";
+import monogram from "../../assets/hero/Curtains/monogram5.png";
 import topFloral from "../../assets/hero/Curtains/top-floral.png";
 import bell from "../../assets/hero/Curtains/bell.png";
 import lotus from "../../assets/hero/Curtains/lotus.png";
