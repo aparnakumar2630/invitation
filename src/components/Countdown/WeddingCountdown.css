@@ -2364,3 +2364,444 @@ background-position: bottom;
   height: 35px;
   width: 35px;
 }
+
+/* =========================================================
+   WEDDING REVEAL BURST
+   Premium scratch-complete celebration
+========================================================= */
+
+.wedding-reveal-burst {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  animation: revealBurstFade 1.8s ease forwards;
+}
+
+
+/* =========================================================
+   CENTER FLASH
+========================================================= */
+
+.burst-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #d8b66e;
+
+  font-size: 34px;
+
+  opacity: 0;
+
+  animation:
+    centerBurst
+    0.8s
+    cubic-bezier(.16, 1, .3, 1)
+    forwards;
+}
+
+.burst-center::before,
+.burst-center::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100px;
+  height: 100px;
+
+  border: 1px solid rgba(177, 132, 62, 0.35);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  animation: burstRing 1s ease-out forwards;
+}
+
+.burst-center::after {
+  width: 180px;
+  height: 180px;
+
+  animation-delay: 0.08s;
+}
+
+
+/* =========================================================
+   SIDE ORNAMENTS
+========================================================= */
+
+.burst-side {
+  position: absolute;
+
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+
+  color: #4e043e;
+
+  font-family: Georgia, serif;
+
+  font-size: 17px;
+}
+
+.burst-left {
+  left: 0;
+
+  transform: translate(-100px, -50%);
+  animation:
+    burstLeft
+    1.1s
+    cubic-bezier(.16, 1, .3, 1)
+    forwards;
+}
+
+.burst-right {
+  right: 0;
+
+  transform: translate(100px, -50%);
+  animation:
+    burstRight
+    1.1s
+    cubic-bezier(.16, 1, .3, 1)
+    forwards;
+}
+
+.burst-left span:nth-child(2),
+.burst-right span:nth-child(2) {
+  font-size: 23px;
+}
+
+.burst-left span:nth-child(4),
+.burst-right span:nth-child(4) {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FALLING GOLD PARTICLES
+========================================================= */
+
+.burst-falling {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.burst-falling span {
+  position: absolute;
+
+  top: -30px;
+
+  color: #c9a45b;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  opacity: 0;
+
+  animation:
+    fallingPetal
+    1.7s
+    cubic-bezier(.2, .8, .3, 1)
+    forwards;
+}
+
+
+/* Different positions */
+
+.burst-falling span:nth-child(1) {
+  left: 8%;
+  animation-delay: .05s;
+}
+
+.burst-falling span:nth-child(2) {
+  left: 17%;
+  animation-delay: .18s;
+}
+
+.burst-falling span:nth-child(3) {
+  left: 27%;
+  animation-delay: .08s;
+}
+
+.burst-falling span:nth-child(4) {
+  left: 36%;
+  animation-delay: .25s;
+}
+
+.burst-falling span:nth-child(5) {
+  left: 46%;
+  animation-delay: .12s;
+}
+
+.burst-falling span:nth-child(6) {
+  left: 55%;
+  animation-delay: .22s;
+}
+
+.burst-falling span:nth-child(7) {
+  left: 64%;
+  animation-delay: .04s;
+}
+
+.burst-falling span:nth-child(8) {
+  left: 73%;
+  animation-delay: .20s;
+}
+
+.burst-falling span:nth-child(9) {
+  left: 82%;
+  animation-delay: .10s;
+}
+
+.burst-falling span:nth-child(10) {
+  left: 90%;
+  animation-delay: .28s;
+}
+
+.burst-falling span:nth-child(11) {
+  left: 14%;
+  animation-delay: .35s;
+}
+
+.burst-falling span:nth-child(12) {
+  left: 88%;
+  animation-delay: .38s;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes revealBurstFade {
+
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes centerBurst {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(2);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(3.5);
+  }
+
+}
+
+
+@keyframes burstRing {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+  }
+
+  25% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(2.5);
+  }
+
+}
+
+
+@keyframes burstLeft {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-100px, -50%)
+      scale(.5);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+
+    transform:
+      translate(35px, -50%)
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(5px, -50%)
+      scale(.8);
+  }
+
+}
+
+
+@keyframes burstRight {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(100px, -50%)
+      scale(.5);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+
+    transform:
+      translate(-35px, -50%)
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-5px, -50%)
+      scale(.8);
+  }
+
+}
+
+
+@keyframes fallingPetal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(-30px)
+      rotate(0deg)
+      scale(.5);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translateY(65vh)
+      rotate(220deg)
+      scale(1.1);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .burst-side {
+    gap: 18px;
+
+    font-size: 13px;
+  }
+  .burst-falling span {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .wedding-reveal-burst,
+  .burst-center,
+  .burst-center::before,
+  .burst-center::after,
+  .burst-side,
+  .burst-falling span {
+    animation: none !important;
+  }
+
+}

@@ -45,6 +45,7 @@ function CountdownBox({ value, label }) {
 
 export default function WeddingCountdown() {
 
+  const [showRevealBurst, setShowRevealBurst] = useState(false);
   const canvasRef = useRef(null);
   const scratchAreaRef = useRef(null);
 
@@ -714,40 +715,32 @@ const startScratch = (event) => {
      REVEAL
   ======================================================= */
 
-  const revealWeddingDay =
-    () => {
+  const revealWeddingDay = () => {
 
-      if (revealed) return;
+  if (revealed) return;
 
+  setShowRevealBurst(true);
+  setRevealed(true);
 
-      setRevealed(true);
+  // Remove burst after animation
+  setTimeout(() => {
+    setShowRevealBurst(false);
+  }, 1800);
 
+  setTimeout(() => {
 
-      /*
-        Scroll event section slightly
-        into view after reveal.
-      */
+    const element =
+      document.getElementById("wedding-events");
 
-      setTimeout(() => {
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
 
-        const element =
-          document.getElementById(
-            "wedding-events"
-          );
-
-
-        if (element) {
-
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-
-        }
-
-      }, 900);
-
-    };
+  }, 900);
+};
 
 
   /* =======================================================
@@ -777,6 +770,74 @@ const startScratch = (event) => {
       className="wedding-countdown-section"
       id="wedding-details"
     >
+
+{showRevealBurst && (
+  <div className="wedding-reveal-burst" aria-hidden="true">
+
+
+
+    {/* TOP FALLING PETALS */}
+    <div className="burst-falling">
+      <span>✦</span>
+      <span>❦</span>
+      <span>✧</span>
+      <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>
+      <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✦</span>
+         <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>✧</span> 
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>✧</span> 
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>✧</span> 
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>✧</span> 
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>
+      <span>✧</span>   <span>✦</span>
+      <span>◆</span>
+      <span>❦</span>  <span>❦</span>
+      <span>✧</span>   <span>❦</span>
+      <span>✧</span>   <span>❦</span>
+      <span>✧</span>   <span>❦</span>
+      <span>✧</span>   <span>❦</span>
+      <span>✧</span> 
+      <span>✧</span>
+      <span>✧</span>
+    </div>
+
+    {/* RIGHT SIDE */}
+   
+
+    {/* CENTER FLASH */}
+    <div className="burst-center">
+      <span>✦</span>
+    </div>
+
+  </div>
+)}
 
       {/* ===============================================
           MINIMAL CORNER FLOWERS
