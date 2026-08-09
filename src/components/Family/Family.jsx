@@ -58,10 +58,7 @@ const Family = () => {
 
             <h4>BRIDE'S FAMILY</h4>
 
-            <h3>Mr. Kumar</h3>
-
-            <h3>Mrs. Devi</h3>
-
+            <h3>Mr. Kumar & Mrs. Devi</h3>
   
               <h3 className="sister-name">
             Elakiya Kumar
