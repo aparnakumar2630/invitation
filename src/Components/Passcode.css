@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.passcode-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(255, 220, 165, 0.65),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(255, 195, 215, 0.55),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #fff9ed, #ffeef4 55%, #fff3d7);
+  font-family: "Baloo 2", sans-serif;
+  color: #54265d;
+}
+
+/* Floating background decorations */
+.decor {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  animation: floatDecoration 5s ease-in-out infinite;
+}
+
+.decor-one {
+  top: 8%;
+  left: 7%;
+  color: #ed8fa8;
+  font-size: 56px;
+}
+
+.decor-two {
+  top: 16%;
+  right: 9%;
+  color: #e4ad36;
+  font-size: 38px;
+  animation-delay: 0.8s;
+}
+
+.decor-three {
+  bottom: 14%;
+  left: 10%;
+  color: #a986d5;
+  font-size: 44px;
+  animation-delay: 1.4s;
+}
+
+.decor-four {
+  bottom: 9%;
+  right: 7%;
+  color: #e99ab4;
+  font-size: 62px;
+  animation-delay: 0.5s;
+}
+
+.decor-five {
+  top: 48%;
+  left: 3%;
+  color: #e5b847;
+  font-size: 26px;
+  animation-delay: 1.8s;
+}
+
+/* Main two-column layout */
+.passcode-layout {
+  width: 100%;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  align-items: center;
+  gap: 48px;
+}
+
+/* LEFT SIDE */
+.birthday-art {
+  min-width: 0;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+/* Funky heading */
+.funky-greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 12px;
+  color: #762d83;
+}
+
+.greeting-text {
+  display: inline-block;
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(28px, 4vw, 45px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-shadow:
+    2px 3px 0 #ffd96c,
+    4px 5px 0 rgba(113, 52, 126, 0.1);
+  animation: greetingBounce 2.5s ease-in-out infinite;
+}
+
+.greeting-star {
+  color: #e9ac2c;
+  font-size: 25px;
+  animation: starTwinkle 1.5s ease-in-out infinite;
+}
+
+.greeting-star:last-child {
+  animation-delay: 0.5s;
+}
+
+/* Welcome / angry Pikachu image */
+.welcome-image {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  max-height: 390px;
+  height: auto;
+  object-fit: contain;
+  margin: 12px auto 18px;
+  border-radius: 20px;
+  animation: pikachuPop 0.45s ease both;
+}
+
+/* Caption below the image */
+.art-caption {
+  margin: 10px auto 0;
+  color: #5c3264;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.art-caption p {
+  margin: 4px 0;
+}
+
+.caption-heart {
+  color: #e6537c;
+}
+
+/* Wrong passcode visual state */
+.wrong-passcode-mode .funky-greeting {
+  color: #cf303d;
+}
+
+.wrong-passcode-mode .greeting-text {
+  text-shadow:
+    2px 3px 0 #ffd3a5,
+    4px 5px 0 rgba(150, 20, 30, 0.12);
+  animation: angryShake 0.45s ease-in-out;
+}
+
+.wrong-passcode-mode .greeting-star {
+  color: #e65348;
+}
+
+.wrong-passcode-mode .welcome-image {
+  filter: drop-shadow(0 8px 14px rgba(190, 36, 48, 0.2));
+}
+
+.funny-title {
+  color: #c92f3c;
+  font-family: "Fredoka", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.funny-caption {
+  color: #6f2c73;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.small-caption {
+  color: #895b48;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* RIGHT SIDE: LOCK PANEL */
+.lock-panel {
+  width: 100%;
+  max-width: 450px;
+  justify-self: center;
+  padding: 15px 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow:
+    0 18px 50px rgba(107, 56, 105, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.lock-icon {
+  margin-bottom: 3px;
+  font-size: 35px;
+}
+
+.lock-panel h1 {
+  margin: 0;
+  color: #58275f;
+  font-family: "Fredoka", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.lock-description {
+  margin: 8px 0 16px;
+  color: #987b9b;
+  font-size: 14px;
+}
+
+/* Small divider */
+.tiny-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0 23px;
+}
+
+.tiny-divider > span:not(.divider-heart) {
+  width: 52px;
+  height: 2px;
+  border-radius: 5px;
+  background: #edc4d0;
+}
+
+.divider-heart {
+  color: #df7394;
+  font-size: 16px;
+}
+
+/* Four separate input boxes */
+.passcode-slots {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin: 0 auto 25px;
+}
+
+.passcode-slot {
+  width: 54px;
+  height: 60px;
+  padding: 0;
+  border: 2px solid #ead5e8;
+  border-radius: 15px;
+  outline: none;
+  background: #fffafd;
+  color: #682f73;
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(94, 47, 103, 0.04);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.passcode-slot:focus {
+  border-color: #ba79c5;
+  background: #fff5ff;
+  box-shadow: 0 0 0 4px rgba(186, 121, 197, 0.12);
+  transform: translateY(-2px);
+}
+
+.passcode-slot.filled {
+  border-color: #d3a0d9;
+  background: #fcf0ff;
+}
+
+/* Number keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 285px;
+  margin: 0 auto;
+}
+
+.keypad-button {
+  min-height: 54px;
+  border: 1px solid #f0d9eb;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff, #fff7fc);
+  color: #61356b;
+  font-family: "Fredoka", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(98, 47, 105, 0.06);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.keypad-button:hover {
+  transform: translateY(-3px);
+  background: #f9e9ff;
+  box-shadow: 0 8px 15px rgba(98, 47, 105, 0.11);
+}
+
+.keypad-button:active {
+  transform: scale(0.95);
+}
+
+.keypad-button.utility-key {
+  background: #fff0f3;
+  color: #c04f76;
+  border-color: #f7d5df;
+}
+
+/* Hint below keypad */
+.passcode-hint {
+  margin: 20px 0 0;
+  color: #9b7b9d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Error message */
+.pikachu-reaction {
+  margin: 18px auto 0;
+  padding: 12px;
+  border: 1px solid #f6c9d2;
+  border-radius: 15px;
+  background: #fff1f3;
+  color: #b52f4c;
+  animation: errorPop 0.3s ease;
+}
+
+.reaction-title {
+  margin: 0 0 4px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pikachu-reaction span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Action buttons */
+.passcode-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 23px;
+}
+
+.passcode-actions button {
+  min-height: 42px;
+  padding: 9px 13px;
+  border: none;
+  border-radius: 12px;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.passcode-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(70, 35, 75, 0.12);
+}
+
+.back-button {
+  background: #f2e9f4;
+  color: #714a77;
+}
+
+.reenter-button {
+  background: #fff0d0;
+  color: #946318;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #7e3b8b, #a956ad);
+  color: #fff;
+  box-shadow: 0 5px 13px rgba(126, 59, 139, 0.2);
+}
+
+.submit-button span {
+  color: #ffdf86;
+}
+
+/* Animations */
+@keyframes floatDecoration {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(10deg);
+  }
+}
+
+@keyframes greetingBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.25) rotate(15deg);
+  }
+}
+
+@keyframes pikachuPop {
+  from {
+    opacity: 0;
+    transform: scale(0.88) rotate(-3deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes angryShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(5px) rotate(2deg);
+  }
+
+  75% {
+    transform: translateX(-3px);
+  }
+}
+
+@keyframes errorPop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .passcode-page {
+    padding: 30px 18px;
+  }
+
+  .passcode-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, 0.95fr);
+    gap: 24px;
+  }
+
+  .lock-panel {
+    padding: 28px 20px;
+  }
+
+  .welcome-image {
+    max-width: 300px;
+  }
+
+  .greeting-text {
+    font-size: 31px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .passcode-page {
+    min-height: 100vh;
+    padding: 25px 16px;
+    overflow-y: auto;
+  }
+
+  .passcode-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 460px;
+    margin: auto;
+  }
+
+  .birthday-art {
+    padding: 10px 4px;
+  }
+
+  .greeting-text {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+
+  .greeting-star {
+    font-size: 20px;
+  }
+
+  .welcome-image {
+    max-width: 250px;
+    max-height: 270px;
+    margin: 8px auto 12px;
+  }
+
+  .art-caption {
+    font-size: 17px;
+  }
+
+  .funny-title {
+    font-size: 22px;
+  }
+
+  .funny-caption {
+    font-size: 16px;
+  }
+
+  .small-caption {
+    font-size: 12px;
+  }
+
+  .lock-panel {
+    max-width: 420px;
+    padding: 25px 18px;
+  }
+
+  .lock-panel h1 {
+    font-size: 27px;
+  }
+
+  .passcode-slots {
+    gap: 10px;
+  }
+
+  .passcode-slot {
+    width: 49px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .keypad {
+    max-width: 270px;
+    gap: 10px;
+  }
+
+  .keypad-button {
+    min-height: 49px;
+  }
+
+  .passcode-actions {
+    gap: 7px;
+  }
+
+  .passcode-actions button {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .decor-one {
+    top: 3%;
+    left: 3%;
+    font-size: 35px;
+  }
+
+  .decor-two {
+    top: 8%;
+    right: 4%;
+    font-size: 28px;
+  }
+
+  .decor-three {
+    bottom: 3%;
+    left: 4%;
+    font-size: 30px;
+  }
+
+  .decor-four {
+    bottom: 3%;
+    right: 4%;
+    font-size: 40px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .passcode-page {
+    padding: 20px 11px;
+  }
+
+  .lock-panel {
+    padding: 22px 12px;
+  }
+
+  .greeting-text {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+
+  .welcome-image {
+    max-width: 215px;
+  }
+
+  .passcode-slot {
+    width: 45px;
+    height: 51px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+
+  .keypad-button {
+    min-height: 45px;
+  }
+
+  .passcode-actions button {
+    padding: 7px 9px;
+  }
+}
