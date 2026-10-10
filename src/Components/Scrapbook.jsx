@@ -34,7 +34,7 @@ const memories = [
     color: "peach",
   },
   {
-    image: "/assets/image6.png",
+    image: "/assets/image6.jpeg",
     caption: "More memories to come 💕",
     note: "Our story is nowhere near over.",
     color: "green",
@@ -265,7 +265,7 @@ export default function Scrapbook() {
         <div className="confetti confetti-four">⚡</div>
 
         <img
-          src="/assets/pikachu.png"
+          src="/assets/caketopper.png"
           alt="Pikachu celebrating"
           className="ending-pikachu"
         />
@@ -274,7 +274,7 @@ export default function Scrapbook() {
 
         <h2>
           Happy Birthday,
-          <span> Naviya! 🎂</span>
+          <span> pisasu..</span>
         </h2>
 
         <p className="ending-message">
